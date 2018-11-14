@@ -1,0 +1,1 @@
+This directory contains web user interface to connect CMS api.
