@@ -1,0 +1,9 @@
+--change the database to your team id
+use ftpXX;
+
+
+insert into EMPLOYEE values(1000);
+insert into EMPLOYEE values(2000);
+insert into EMPLOYEE values(2001);
+insert into EMPLOYEE values(3000);
+insert into EMPLOYEE values(3001);
