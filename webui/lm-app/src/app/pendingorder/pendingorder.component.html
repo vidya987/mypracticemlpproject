@@ -1,0 +1,52 @@
+<h1>
+    Pending Order
+</h1>
+
+<!-- <form #leaveForm = "ngForm" (ngSubmit) = "OnSubmit(leaveForm)">   -->
+  <form>
+<div>
+<table border = 5 align = "center">
+  <thead>
+      <tr>
+          <th  (click)="sortTable(0)">Order Id</th>
+          <th  (click)="sortTable(1)">Food Id</th>
+          <th  (click)="sortTable(2)">Order time</th>
+          <th  (click)="sortTable(3)">Cancellation time</th>
+          <th  (click)="sortTable(4)">Employee Id</th>
+          <th  (click)="sortTable(5)">Final Amount</th>
+          <th  (click)="sortTable(6)">Estimated Time</th>
+          <th  (click)="sortTable(7)">Status</th>
+          <th  (click)="sortTable(8)">Quantity</th>
+
+      </tr>
+  </thead>
+  <!-- <tbody>
+      <tr *ngFor='let order of orders;let i=index'>
+          <td>
+            <input type="checkbox" name="lvId" (change)="updateChecked(i, order, $event)" >
+            {{order.orderId}}
+            </td>
+
+
+          <td>{{order.foodId}}</td>
+          <td>{{order.orderTime}}</td>
+          <td>{{order.cancellationTime}}</td>
+          <td>{{order.empId}}</td>
+          <td>{{order.finalAmnt}}</td>
+          <td>{{order.estimatedTime}}</td>
+          <td>{{order.status}}</td>
+          <td>{{order.quantity}}</td>
+       
+           </tr>
+
+  </tbody> -->
+
+  
+</table>
+
+ <!-- <div style="width:300px" id="container" >
+       <ul> <input type = "button" (click)=OnApprove(leaveForm) value = "Approve"/>
+        <input type = "button" (click)=OnDeny(leaveForm)  value = "Denied"/></ul>
+  </div> -->
+</div> 
+</form>

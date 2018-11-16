@@ -16,7 +16,8 @@ import com.hexaware.canteenmanagement.factory.MenuFactory;
  * This class provides a REST interface for the employee entity.
  */
 @Path("/menu")
-public class MenuRest { /*
+public class MenuRest {
+   /*
    /**
    * Returns a specific employee's details.
    * @param ld the id of the employee
@@ -42,11 +43,11 @@ public class MenuRest { /*
    */
   @GET
   @Produces(MediaType.APPLICATION_JSON)
-  @Path("/list")
   public final Menu[] listMenu() {
-    final Menu[] ldd = MenuFactory.showMenu();
-    return ldd;
-  } /*
+    final Menu[] menu = MenuFactory.showMenu();
+    return menu;
+  } 
+  /*
   /**
    * Returns a specific employee's details.
    * @param empID the id of the employee.
@@ -61,4 +62,3 @@ public class MenuRest { /*
     return l;
   }*/
 }
-

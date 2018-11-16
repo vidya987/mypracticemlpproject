@@ -1,3 +1,4 @@
+
 package com.hexaware.canteenmanagement.util;
 import java.util.Scanner;
 import com.hexaware.canteenmanagement.factory.MenuFactory;
@@ -54,8 +55,8 @@ class CliMain {
     }
   }
 /**
- * main method  is the basic entry point for the application
- * @param args used to get the user input
+ * main method  is the basic entry point for the application.
+ * @param args used to get the user input.
  */
   public static void main(final String[] args) {
     final CliMain mainObj = new CliMain();

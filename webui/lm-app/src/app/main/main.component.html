@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<!-- Sidebar -->
+<!-- {{u1}} -->
+<div *ngIf="admin">
+  
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+  <h3 class="w3-bar-item">Admin Dashboard</h3>
+  <a class="w3-bar-item w3-button" id="c" [routerLink]="['./app-admininfo']" [routerLinkActive]="['active']">Admin Information</a>
+  <a class="w3-bar-item w3-button" id="c" [routerLink]="['./app-pendingorder']" [routerLinkActive]="['active']">Pending Order</a>
+  <a class="w3-bar-item w3-button" id="c" [routerLink]="['./app-food-items']" [routerLinkActive]="['active']" >Enter New Food Item</a>
+ <a class="w3-bar-item w3-button" id="c" [routerLink]="['./app-orderhistory']" [routerLinkActive]="['active']" >Order History</a> 
+ 
+
+</div>
+
+<!-- Page Content -->
+<div style="margin-left:25%">
+
+<div class="w3-container w3-teal">
+  <h1>Canteen Management System</h1>
+</div>
+<div style="text-align:right">
+    <button type ="logout" class ="btn btn success"(click)="logout()">Logout</button>
+    </div>
+<div class="w3-container">
+</div>
+<article>
+  <router-outlet></router-outlet>
+</article>
+</div>
+</div> 
+<!--First ngif-->
+<div *ngIf="!admin" >
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+  <h3 class="w3-bar-item">Employee Dashboard</h3>
+   <a class="w3-bar-item w3-button" id="c" [routerLink]="['./app-employeeinfo']" [routerLinkActive]="['active']">Employee Information</a>
+   <a class="w3-bar-item w3-button" id="c" [routerLink]="['./app-cart']" [routerLinkActive]="['active']">Current Order</a> 
+   <a class="w3-bar-item w3-button" id="c" [routerLink]="['./app-orderhistory']" [routerLinkActive]="['active']" >Order History</a>
+   <a class="w3-bar-item w3-button" id="c" [routerLink]="['./app-admininfo']" [routerLinkActive]="['active']">Vendor Information</a>
+ 
+</div>
+
+<!-- Page Content -->
+<div style="margin-left:25% ">
+
+<div class="w3-container w3-teal" style = "background-color: transparent">
+
+  <h1>Canteen Management System</h1>
+</div>
+<div style="text-align:right">
+    <button type ="logout" class ="btn btn success"(click)="logout()">Logout</button>
+    </div>
+<div class="w3-container" style = "background-color: transparent">
+</div>
+<article>
+  <router-outlet></router-outlet>
+</article>
+</div>
+</div>
+</body>
+</html>

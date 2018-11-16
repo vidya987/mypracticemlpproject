@@ -1,3 +1,4 @@
+
 package com.hexaware.canteenmanagement.model;
 
 import java.util.Objects;
@@ -17,10 +18,10 @@ public class Menu {
   private int quantity;
   private int price;
 /**
- * @param argFoodId
- * @param argFoodName
- * @param argQuantity
- * @param argPrice
+ * @param argFoodId to initialize food id.
+ * @param argFoodName to initialize food name.
+ * @param argQuantity to initialize quantity.
+ * @param argPrice to initialize price.
  * used to get details through constructor.
  */
   public Menu(final int argFoodId, final String argFoodName, final int argQuantity, final int argPrice) {
