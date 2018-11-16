@@ -3,16 +3,16 @@ package com.hexaware.canteenmanagement.persistence;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.hexaware.canteenmanagement.model.Employee;
+import com.hexaware.canteenmanagement.model.Customer;
 
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 import org.skife.jdbi.v2.StatementContext;
 /**
- * EmployeeMapper class return employee  data from database.
+ * CustomerMapper class return employee  data from database.
  * @author hexware
  */
 
-public class EmployeeMapper implements ResultSetMapper<Employee> {
+public class CustomerMapper implements ResultSetMapper<Customer> {
     /**
      * @param idx the index
      * @param rs the resultset
@@ -20,11 +20,11 @@ public class EmployeeMapper implements ResultSetMapper<Employee> {
      * @return the mapped employee object
      * @throws SQLException in case there is an error in fetching data from the resultset
      */
-  public final Employee map(final int idx, final ResultSet rs, final StatementContext ctx) throws SQLException {
+  public final Customer map(final int idx, final ResultSet rs, final StatementContext ctx) throws SQLException {
       /**
-       * @return Employee
+       * @return Customer
        */
-    return new Employee(rs.getInt("emp_id"), rs.getString("emp_name"), rs.getInt("wallet_balance"),
+    return new Customer(rs.getInt("cus_id"), rs.getString("cus_name"), rs.getInt("wallet_balance"),
                     rs.getString("role"), rs.getString("contact_no"));
   }
 }

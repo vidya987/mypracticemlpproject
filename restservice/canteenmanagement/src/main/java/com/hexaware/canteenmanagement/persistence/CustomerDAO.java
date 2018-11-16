@@ -6,7 +6,7 @@ import org.skife.jdbi.v2.sqlobject.customizers.Mapper;
 import java.util.List;
 import com.hexaware.canteenmanagement.model.Customer;
 /**
- * EmployeeDAO class used to fetch data from data base.
+ *CustomerDAO class used to fetch data from data base.
  * @author hexware
  */
 public interface CustomerDAO {
@@ -24,5 +24,5 @@ public interface CustomerDAO {
    */
   @SqlQuery("Select * from employee")
     @Mapper(CustomerMapper.class)
-    List<Employee> list();
+    List<Customer> list();
 }

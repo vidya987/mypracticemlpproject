@@ -49,9 +49,9 @@ public class MenuRest {
   } 
   /*
   /**
-   * Returns a specific employee's details.
-   * @param empID the id of the employee.
-   * @return the employee leavedetails.
+   * Returns a specific Customer details.
+   * @param empID the id of the Customer.
+   * @return the Customer leavedetails.
    *//*
   @GET
   @Produces(MediaType.APPLICATION_JSON)
