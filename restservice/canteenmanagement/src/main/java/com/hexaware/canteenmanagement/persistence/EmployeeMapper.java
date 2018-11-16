@@ -7,6 +7,10 @@ import com.hexaware.canteenmanagement.model.Employee;
 
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 import org.skife.jdbi.v2.StatementContext;
+/**
+ * EmployeeMapper class return employee  data from database.
+ * @author hexware
+ */
 
 public class EmployeeMapper implements ResultSetMapper<Employee> {
     /**
@@ -16,11 +20,11 @@ public class EmployeeMapper implements ResultSetMapper<Employee> {
      * @return the mapped employee object
      * @throws SQLException in case there is an error in fetching data from the resultset
      */
-    public final Employee map(final int idx, final ResultSet rs, final StatementContext ctx) throws SQLException {
+  public final Employee map(final int idx, final ResultSet rs, final StatementContext ctx) throws SQLException {
       /**
        * @return Employee
        */
-      return new Employee(rs.getInt("emp_id"), rs.getString("emp_name"), rs.getInt("wallet_balance"),
+    return new Employee(rs.getInt("emp_id"), rs.getString("emp_name"), rs.getInt("wallet_balance"),
                     rs.getString("role"), rs.getString("contact_no"));
-    }
   }
+}

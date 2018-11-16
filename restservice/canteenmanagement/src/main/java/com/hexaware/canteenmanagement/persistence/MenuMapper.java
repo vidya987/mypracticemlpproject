@@ -7,7 +7,10 @@ import com.hexaware.canteenmanagement.model.Menu;
 
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 import org.skife.jdbi.v2.StatementContext;
-
+/**
+ * MenuMapper class used to fetch menu data from database.
+ * @author hexware
+ */
 public class MenuMapper implements ResultSetMapper<Menu> {
     /**
      * @param idx the index
@@ -16,11 +19,11 @@ public class MenuMapper implements ResultSetMapper<Menu> {
      * @return the mapped employee object
      * @throws SQLException in case there is an error in fetching data from the resultset
      */
-    public final Menu map(final int idx, final ResultSet rs, final StatementContext ctx) throws SQLException {
+  public final Menu map(final int idx, final ResultSet rs, final StatementContext ctx) throws SQLException {
       /**
        * @return Employee
        */
-      return new Menu(rs.getInt("food_id"), rs.getString("food_name"), rs.getInt("quantity"),
+    return new Menu(rs.getInt("food_id"), rs.getString("food_name"), rs.getInt("quantity"),
                     rs.getInt("price"));
-    }
   }
+}
