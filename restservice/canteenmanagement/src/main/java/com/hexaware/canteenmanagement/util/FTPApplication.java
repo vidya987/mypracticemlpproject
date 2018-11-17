@@ -30,7 +30,6 @@ class CORSFilter implements ContainerResponseFilter {
             "GET, POST, PUT, DELETE, OPTIONS, HEAD");
   }
 }
-
 /**
  * This class sets up the REST class scan, and the cors filter.
  */

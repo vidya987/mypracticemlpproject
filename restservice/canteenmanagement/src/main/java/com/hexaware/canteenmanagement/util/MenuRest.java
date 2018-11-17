@@ -46,7 +46,7 @@ public class MenuRest {
   public final Menu[] listMenu() {
     final Menu[] menu = MenuFactory.showMenu();
     return menu;
-  } 
+  }
   /*
   /**
    * Returns a specific Customer details.

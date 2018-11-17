@@ -1,4 +1,3 @@
-
 package com.hexaware.canteenmanagement.model;
 
 import java.util.Objects;
@@ -27,7 +26,7 @@ public class Customer {
  * @param argContactNo to initialize Customer contact no.
  * used to get user data through constructor.
  */
-  public Customer (final int argCusId, final String argCusName, final int argWalletBalance,
+  public Customer(final int argCusId, final String argCusName, final int argWalletBalance,
       final String argRole, final String argContactNo) {
     this.cusId = argCusId;
     this.cusName = argCusName;
