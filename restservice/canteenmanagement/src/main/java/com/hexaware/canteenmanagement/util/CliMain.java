@@ -2,9 +2,9 @@
 package com.hexaware.canteenmanagement.util;
 import java.util.Scanner;
 import com.hexaware.canteenmanagement.factory.MenuFactory;
-//import com.hexaware.canteenmanagement.factory.EmployeeFactory;
+//import com.hexaware.canteenmanagement.factory.CustomerFactory;
 import com.hexaware.canteenmanagement.model.Menu;
-//import com.hexaware.canteenmanagement.model.Employee;
+//import com.hexaware.canteenmanagement.model.Customer;
 /**
  * CliMain used as Client interface for java coading.
  * @author hexware

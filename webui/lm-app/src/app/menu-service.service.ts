@@ -7,7 +7,7 @@ export class MenuServiceService {
 
   constructor(private httpClient: HttpClient) { }
   getMenu() : Observable<Menu[]> {
-    let url = "http://localhost:8080/canteenmanagement/api/employees"
+    let url = "http://localhost:8080/canteenmanagement/api/menu"
     return this.httpClient.get<Menu[]>(url);
   }
 }

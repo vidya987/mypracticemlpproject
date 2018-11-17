@@ -9,8 +9,11 @@ import com.hexaware.canteenmanagement.model.Menu;
  * MenuFactory class used to fetch menu data from database.
  * @author hexware
  */
-final class MenuFactory {
-  private MenuFactory() {
+public class MenuFactory {
+  /**
+   *  Protected constructor.
+   */
+  protected MenuFactory() {
 
   }
   /**

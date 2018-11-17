@@ -6,8 +6,11 @@ import com.hexaware.canteenmanagement.persistence.CustomerDAO;
 /**
  * This class used to create DbConnection object and creating the db connection through DbConnection.
  */
-final class CustomerFactory {
-  private CustomerFactory() {
+public class CustomerFactory {
+  /**
+   *  Protected constructor.
+   */
+  protected CustomerFactory() {
 
   }
    /**
