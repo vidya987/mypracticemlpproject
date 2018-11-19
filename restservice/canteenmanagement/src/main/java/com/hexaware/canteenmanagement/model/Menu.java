@@ -1,4 +1,3 @@
-
 package com.hexaware.canteenmanagement.model;
 
 import java.util.Objects;
@@ -15,20 +14,17 @@ public class Menu {
  */
   private int foodId;
   private String foodName;
-  private int quantity;
-  private int price;
+  private int vendor;
 /**
  * @param argFoodId to initialize food id.
  * @param argFoodName to initialize food name.
- * @param argQuantity to initialize quantity.
- * @param argPrice to initialize price.
+  * @param argVendor to initialize vendor.
  * used to get details through constructor.
  */
-  public Menu(final int argFoodId, final String argFoodName, final int argQuantity, final int argPrice) {
+  public Menu(final int argFoodId, final String argFoodName, final int argVendor) {
     this.foodId = argFoodId;
     this.foodName = argFoodName;
-    this.quantity = argQuantity;
-    this.price = argPrice;
+    this.vendor = argVendor;
   }
   @Override
     public final boolean equals(final Object obj) {
@@ -40,14 +36,14 @@ public class Menu {
     }
     Menu menu = (Menu) obj;
     if (Objects.equals(foodId, menu.foodId) && Objects.equals(foodName, menu.foodName)
-            && Objects.equals(quantity, menu.quantity) && Objects.equals(price, menu.price)) {
+            && Objects.equals(vendor, menu.vendor)) {
       return true;
     }
     return false;
   }
   @Override
     public final int hashCode() {
-    return Objects.hash(foodId, foodName, quantity, price);
+    return Objects.hash(foodId, foodName, vendor);
   }
     /**
      * @return this food ID.
@@ -62,16 +58,10 @@ public class Menu {
     return foodName;
   }
     /**
-     * @return the quantity.
+     * @return the vendor.
      */
-  public final int getQuantity() {
-    return quantity;
-  }
-    /**
-     * @return the price
-     */
-  public final int getPrice() {
-    return price;
+  public final int getVendor() {
+    return vendor;
   }
     /**
      * @param argFoodId gets the food id.
@@ -86,15 +76,9 @@ public class Menu {
     this.foodName = argFoodName;
   }
     /**
-     * @param argQuantity gets the food quantity.
+     * @param argVendor gets the food id.
      */
-  public final void setQuantity(final int argQuantity) {
-    this.quantity = argQuantity;
-  }
-    /**
-     * @param argPrice gets the food price.
-     */
-  public final void setPrice(final int argPrice) {
-    this.price = argPrice;
+  public final void setvendor(final int argVendor) {
+    this.vendor = argVendor;
   }
 }

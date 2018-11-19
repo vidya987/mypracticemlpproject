@@ -21,17 +21,14 @@ Canteen Management System
 
 <th>Food Name</th>
 
-<th>Price</th>
+<th>Vendor</th>
 
 <th>Add to Cart</th>
-<th>Vendor</th>
 </tr>
 
 </thead>
 <tbody>
-  <tr *ngFor='let menu of menus
-          let i = index 
-          let isEven = even; let isOdd = odd'>
+  <tr *ngFor='let menu of menus'>
    
     <td>
       <h5>{{menu.foodId}}</h5>
@@ -40,20 +37,20 @@ Canteen Management System
       <h5>{{menu.foodName}}</h5>
     </td>
     <td>
-      <h5>{{menu.price}}</h5>
+      <h5>{{menu.vendor}}</h5>
     </td>
-    <td>
+    <td>        
       
-          <button class="btn btn-default" > Add</button>
+          <button class="btn btn-default" > Add to Cart</button>
       
           </td>
-    
+          
     
     
   </tr>
   <tr *ngIf="!menus || menus.length==0">
     <td colspan="5">
-      No employees to display
+      No Menu items to display
     </td>
   </tr>
 </tbody>

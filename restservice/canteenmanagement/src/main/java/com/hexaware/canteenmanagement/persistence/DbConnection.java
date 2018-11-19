@@ -16,7 +16,7 @@ public class DbConnection {
       if (dbc == null || dbc.equals("")) {
         dbc = "localhost:3306";
       }
-      DBI dbi = new DBI("jdbc:mysql://" + dbc + "/CanteenManagement?useSSL=false", "root", "Password123");
+      DBI dbi = new DBI("jdbc:mysql://" + dbc + "/canteenmanagement?useSSL=false", "root", "Password123");
       return dbi;
     } catch (ClassNotFoundException e) {
       throw new RuntimeException(e);

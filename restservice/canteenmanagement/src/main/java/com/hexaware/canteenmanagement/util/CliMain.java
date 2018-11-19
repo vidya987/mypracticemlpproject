@@ -49,9 +49,11 @@ class CliMain {
  */
   private void showFullMenu() {
     Menu[] menu = MenuFactory.showMenu();
-    System.out.println("Food Id  Food Name  Quantity Price");
+    System.out.println("Vendor_Id    FoodName ");
+    //System.out.println("Food_Id  Food_Name   Quantity   Price    vendor");
     for (Menu m : menu) {
-      System.out.println(m.getFoodId() + "\t" + m.getFoodName() + "\t" + m.getQuantity() + "\t" + m.getPrice());
+      System.out.println(m.getVendor() + "\t\t" + m.getFoodName());
+     // System.out.println(m.getFoodId() + "\t" + m.getFoodName() + "\t\t" + m.getQuantity() + "\t" + m.getPrice() + "\t" + m.getVendor());
     }
   }
 /**

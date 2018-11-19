@@ -1,17 +1,18 @@
---creating database with your team id
-CREATE DATABASE ftpXX;
---using the database
-use ftpXX;
--- droping the table if already exist
-drop table EMPLOYEE;
---create the table
-create table Employee(EMP_ID int primary key);
+--creating Database
+create database canteenmanagement;
+
+--using the Database
+use canteenmanagement;
+
+--Creating Menu table 
+CREATE TABLE MENU(FOOD_ID INT PRIMARY KEY,FOOD_NAME VARCHAR(40) NOT NULL, VENDOR_ID INT)
+
+--creating vendor table
+CREATE TABLE VENDOR(VENDOR_ID INT PRIMARY KEY);
+
+--Alter table
+ALTER TABLE MENU add constraint fk foreign key(vendor_id) references vendor(vendor_id);
 
 
-
-
-create table Employee(EMP_ID int primary key, emp_name varchar(20), wallet_balance varchar(10), role varchar(10), contact_no varchar(13));
-create table Menu(food_id int primary key, food_name varchar(20), quantity int, price int, vendor varchar(20));
-
-create table Orders(order_id int primary key, food_id int, order_time varchar(10), cancellation_time varchar(10), emp_id int,
-                   final_amnt int, estimated_time varchar(10), order_status varchar(10));
+SELECT * FROM VENDOR;
+SELECT * FROM MENU;

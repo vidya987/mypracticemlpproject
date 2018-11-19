@@ -1,9 +1,18 @@
 --change the database to your team id
-use ftpXX;
+use canteenmanagement;
 
 
-insert into EMPLOYEE values(1000);
-insert into EMPLOYEE values(2000);
-insert into EMPLOYEE values(2001);
-insert into EMPLOYEE values(3000);
-insert into EMPLOYEE values(3001);
+insert into VENDOR values(1001);
+insert into VENDOR values(1002);
+
+SELECT * FROM VRNDOR;
+
+insert into MENU values(1,'NORTH INDIAN VEG',1001);
+
+insert into MENU values(1,'NORTH INDIAN NON VEG',1001);
+
+insert into MENU values(1,'SOUTH INDIAN VEG',1002);
+
+insert into MENU values(1,'SOUTH INDIAN VEG',1002);
+
+SELECT * FROM MENU;

@@ -21,9 +21,8 @@ public class MenuMapper implements ResultSetMapper<Menu> {
      */
   public final Menu map(final int idx, final ResultSet rs, final StatementContext ctx) throws SQLException {
       /**
-       * @return Customer
+       * @return Menu
        */
-    return new Menu(rs.getInt("food_id"), rs.getString("food_name"), rs.getInt("quantity"),
-                    rs.getInt("price"));
+    return new Menu(rs.getInt("food_id"), rs.getString("food_name"), rs.getInt("vendor_id"));
   }
 }

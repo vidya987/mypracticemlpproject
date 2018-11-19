@@ -12,14 +12,14 @@ import { Menu } from '../menu';
 export class HomeComponent implements OnInit {
   errorMsg : any;
   username: string;
-  menu: Menu[];
+  menus: Menu[];
  
   constructor(private menuServ : MenuServiceService) { }
 
   ngOnInit() {
     this.menuServ.getMenu()
     .subscribe(
-      data => this.menu = data,
+      data => this.menus = data,
       error => this.errorMsg = error
     );
 
