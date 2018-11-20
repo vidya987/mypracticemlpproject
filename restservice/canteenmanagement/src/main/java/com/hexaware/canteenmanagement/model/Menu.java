@@ -13,13 +13,8 @@ import java.util.List;
 public class Menu {
 /**
  * foodId to store foodId.
- * foodName to store foodName.
- * quantity to store quantity.
- * price to store price.
  */
   private int foodId;
-  private String foodName;
-  private int vendor;
   /**
    * Default Constructor.
    */
@@ -28,14 +23,10 @@ public class Menu {
   }
 /**
  * @param argFoodId to initialize food id.
- * @param argFoodName to initialize food name.
-  * @param argVendor to initialize vendor.
  * used to get details through constructor.
  */
-  public Menu(final int argFoodId, final String argFoodName, final int argVendor) {
+  public Menu(final int argFoodId) {
     this.foodId = argFoodId;
-    this.foodName = argFoodName;
-    this.vendor = argVendor;
   }
   @Override
     public final boolean equals(final Object obj) {
@@ -46,15 +37,14 @@ public class Menu {
       return false;
     }
     Menu menu = (Menu) obj;
-    if (Objects.equals(foodId, menu.foodId) && Objects.equals(foodName, menu.foodName)
-            && Objects.equals(vendor, menu.vendor)) {
+    if (Objects.equals(foodId, menu.foodId)) {
       return true;
     }
     return false;
   }
   @Override
     public final int hashCode() {
-    return Objects.hash(foodId, foodName, vendor);
+    return Objects.hash(foodId);
   }
     /**
      * @return this food ID.
@@ -63,34 +53,10 @@ public class Menu {
     return foodId;
   }
     /**
-     * @return this food name.
-     */
-  public final String getFoodName() {
-    return foodName;
-  }
-    /**
-     * @return the vendor.
-     */
-  public final int getVendor() {
-    return vendor;
-  }
-    /**
      * @param argFoodId gets the food id.
      */
   public final void setFoodId(final int argFoodId) {
     this.foodId = argFoodId;
-  }
-    /**
-     * @param argFoodName gets the food name.
-     */
-  public final void setFoodName(final String argFoodName) {
-    this.foodName = argFoodName;
-  }
-    /**
-     * @param argVendor gets the food id.
-     */
-  public final void setVendor(final int argVendor) {
-    this.vendor = argVendor;
   }
   /**
    * Call the data base connection.
@@ -107,14 +73,5 @@ public class Menu {
   public static Menu[] showMenu() {
     List<Menu> menu = dao().show();
     return menu.toArray(new Menu[menu.size()]);
-  }
-   /**
-   * Call the data base connection.
-   * @param argFoodId to initialize employee id.
-   * @return the menu object.
-   */
-  public static Menu showFoodItem(final int argFoodId) {
-    Menu menu = dao().findByFoodId(argFoodId);
-    return menu;
   }
 }

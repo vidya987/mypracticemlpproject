@@ -3,7 +3,6 @@ package com.hexaware.canteenmanagement.model;
 import com.hexaware.canteenmanagement.persistence.MenuDAO;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
@@ -35,25 +34,17 @@ public class MenuTest {
   @Test
   public final void testMenu() {
     Menu m = new Menu();
-    Menu m100 = new Menu(100, "Pizza", 1000);
-    Menu m101 = new Menu(101, "Burger", 1001);
+    Menu m100 = new Menu(100);
+    Menu m101 = new Menu(101);
     assertNotEquals(m100, null);
     assertNotEquals(m101, null);
     assertEquals(m100.getFoodId(),
-        new Menu(100, "Pizza", 1000).getFoodId());
-    assertEquals(m100.getFoodName(),
-        new Menu(100, "Pizza", 1000).getFoodName());
-    assertEquals(m100.getVendor(),
-        new Menu(100, "Pizza", 1000).getVendor());
+        new Menu(100).getFoodId());
     m101.setFoodId(100);
-    assertNotEquals(m101, new Menu(101, "Burger", 1001));
-    m101.setFoodName("Burger");
-    assertNotEquals(m101, new Menu(101, "Burger", 1001));
-    m101.setVendor(1001);
-    assertNotEquals(m101, new Menu(101, "Burger", 1001));
+    assertNotEquals(m101, new Menu(101));
     assertEquals(m100.hashCode(),
-        new Menu(100, "Pizza", 1000).hashCode());
-    assertEquals(m100, new Menu(100, "Pizza", 1000));
+        new Menu(100).hashCode());
+    assertEquals(m100, new Menu(100));
   }
   /**
    * tests that empty employee list is handled correctly.
@@ -81,8 +72,8 @@ public class MenuTest {
    */
   @Test
   public final void testListAllSome(@Mocked final MenuDAO dao) {
-    final Menu m100 = new Menu(100, "Pizza", 1000);
-    final Menu m101 = new Menu(101, "Burger", 1001);
+    final Menu m100 = new Menu(100);
+    final Menu m101 = new Menu(101);
     final ArrayList<Menu> mn = new ArrayList<Menu>();
     new Expectations() {
       {
@@ -99,34 +90,9 @@ public class MenuTest {
     };
     Menu[] mn1 = Menu.showMenu();
     assertEquals(2, mn1.length);
-    assertEquals(new Menu(100, "Pizza", 1000).getFoodId(),
+    assertEquals(new Menu(100).getFoodId(),
         mn1[0].getFoodId());
-    assertEquals(new Menu(101, "Burger", 1001).getFoodId(),
+    assertEquals(new Menu(101).getFoodId(),
         mn1[1].getFoodId());
-  }
-  /**
-   * Tests that a fetch of a specific employee works correctly.
-   * @param dao mocking the dao class
-   */
-  @Test
-  public final void testListById(@Mocked final MenuDAO dao) {
-    final Menu m100 = new Menu(100, "Pizza", 1000);
-    new Expectations() {
-      {
-        dao.findByFoodId(102); result = m100;
-        dao.findByFoodId(-1); result = null;
-      }
-    };
-    new MockUp<Menu>() {
-      @Mock
-      MenuDAO dao() {
-        return dao;
-      }
-    };
-    Menu m = Menu.showFoodItem(102);
-    assertEquals(m100, m);
-
-    m = Menu.showFoodItem(-1);
-    assertNull(m);
   }
 }

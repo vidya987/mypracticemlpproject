@@ -32,13 +32,4 @@ public class MenuFactory {
     List<Menu> menu = dao().show();
     return menu.toArray(new Menu[menu.size()]);
   }
-   /**
-   * Call the data base connection.
-   * @param argFoodId to initialize employee id.
-   * @return the menu object.
-   */
-  public static Menu showFoodItem(final int argFoodId) {
-    Menu menu = dao().findByFoodId(argFoodId);
-    return menu;
-  }
 }

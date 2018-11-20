@@ -1,6 +1,6 @@
 # Week #2: Course Materials
 
-The objective of week #2 is to get the cli working with showing employee details - name, department, leave_available etc. From this week onwards, we will be doing sprint planning and sprint review/retrospective every week.
+The objective of week #2 is to get the cli working with showing menu details - foodname,quantity,price,VendorId etc. From this week onwards, we will be doing sprint planning and sprint review/retrospective every week.
 
 ## Java (Will be continued in Week#3 as well)
 
@@ -14,12 +14,12 @@ The objective of week #2 is to get the cli working with showing employee details
   * Create Trello  Project Board for all the work to be done in Week #2 
     * Create  task for database design changes  
        * A "Card" should  be included to describe the below task in the Sprint Backlog (board) 
-          * Task : "Create a database design for the leave management application", and 
+          * Task : "Create a database design for the canteenmanagement application", and 
           * Ticket Number (manually typed) shoudld be included as prefix in the Task           
        * A "Card" should be included to describe the below task in the Sprint Backlog 
-          * Task: "Change the model/Employee java class for the columns identified"
+          * Task: "Change the model/Menu java class for the columns identified"
        * A "Card" should be incldued to desribe the below task in the Sprint Backlog
-          * Task: "Change the persistence/Employee DAO/mapper java classes for the new attributes"           
+          * Task: "Change the persistence/Menu DAO/mapper java classes for the new attributes"           
           * Ticket Number (manually typed) shoudld be included as prefix in the Task  
        * A "Card" should be incldued to desribe the below task in the Sprint Backlog
           * Task: "Change the Util.CliMain java class for the new attributes"  
@@ -27,9 +27,9 @@ The objective of week #2 is to get the cli working with showing employee details
   * Ensure that once after creating all your task moved to "To do" column in the project board
   * Move the task for "To do" to "In Progress" column and start your task  
   * Database Design
-     * Edit Database.ddl for two tables: EMPLOYEE and LEAVE_DETAILS
+     * Edit Database.ddl for the tables: MENU,ORDER,CUSTOMER and VENDOR
         * Use the "STANDARDS_AND_GUIDELINES.md" file for the naming conventions to be followed.
-     * Edit Database.dml to insert data into the Menu table; The  table can be blank to start with.
+     * Edit Database.dml to insert data into the MENU,CUSTOMER,VENDOR table; The ORDER table can be blank to start with.
      * Run the ddls and dmls against your local mysql server
      * Push the changes to remote branch
      * Now, the other team members can pull from branch and run the ddl/dml against their local databases
