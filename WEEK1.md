@@ -169,11 +169,11 @@ IdentityFile ~/.ssh/id_rsa
     
     * Go back to Gitbash and clone the project
     * `pwd` -- Check and verify that the current working directory is C:\users\Hvuser/workspace
-    * `git clone ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/ftpXX `
-    * `cd ftpXX`
+    * `git clone ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/FTP-fork-me-CMS `
+    * `cd canteenmanagement`
     * `git status`
   * open Visual Studio (VS) Code
-    * Open folder c:\users\Hvuser\workspace\ftpXX
+    * Open folder c:\users\Hvuser\workspace\canteenmanagement
     * Browse the directories to understand the repository structure
 
 # Workshop material - Day #2 - MySQL Workbench/Cli/Curl/Browser to interact w/ application
@@ -181,9 +181,9 @@ IdentityFile ~/.ssh/id_rsa
   * Open MySQL Workbench
   * Open the localhost connection
     * Mac OS: `export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS` and then you can use the command line `mysql -u root -phexawareftpdev`
-  * `CREATE DATABASE ftpXX;` and click the lightning button
-  * `CREATE USER 'ftpXX'@'localhost' IDENTIFIED BY 'ftpXX';`
-  * `GRANT ALL ON ftpXX.* TO 'ftpXX'@'localhost';`
+  * `CREATE DATABASE canteenmanagement;` and click the lightning button
+  * `CREATE USER 'canteenmanagement'@'localhost' IDENTIFIED BY 'canteenmanagement';`
+  * `GRANT ALL ON canteenmanagement.* TO 'canteenmanagement'@'localhost';`
   * Open database/database.ddl in VS code
   * Copy the entire contents to MySQL Workbench
   * Execute the ddl 
@@ -199,34 +199,33 @@ IdentityFile ~/.ssh/id_rsa
     * At the end of all the playing around, leave the database with 5 records with ids (1000, 2001
     
   * Next, we will build and run the java code
-  * go to gitbash, ensure you are in workspace/ftpXX
+  * go to gitbash, ensure you are in workspace/canteenmanagement
   * `cd restservice/canteenmanagement`
   * `mvn compile`
-  * `mvn exec:java -Dexec.mainClass=com.hexaware.ftpXX.util.CliMain`
+  * `mvn exec:java -Dexec.mainClass=com.hexaware.canteenmanagement.util.CliMain`
     * As expected, the cli displays only the employee id for the employee; we need to do some code changes before the other attributes such as name will start appearing in the cli. But before that we will test the application as a REST service.
     * Due to a bug in the database connection code, after exiting, there will be an error with a stack trace. Ignore this error.
   * Build the war file as follows:
     * `mvn package` -- This build a war (java web archive with the code for the REST service)
-    * `cp target/ftpXX-0.0.1-SNAPSHOT.war /D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/ftpXX.war`
+    * `cp target/canteenmanagement-0.0.1-SNAPSHOT.war /D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/canteenmanagement.war`
     * start tomcat and tail its logs
       * `cd D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16`
       * `rm -rf logs/*`
       * `./bin/startup.sh`
       * `tail -f logs/*`
-      * `curl -vvv http://localhost:8080/ftpXX/api/employees | python -m json.tool`
-      * `curl -vvv http://localhost:8080/ftpXX/api/employees/2000 | python -m json.tool`
-   * `cd ../../webui/lm-app/`
+      * `curl -vvv http://localhost:8080/canteenmanagement/api/menu | python -m json.tool`
+      * `cd ../../webui/lm-app/`
    * `npm install`
    * `ng build`
-   * `cp ../../restservice/leavemanager/target/ftpXX-0.0.1-SNAPSHOT.war ./ftpXX.war`
+   * `cp ../../restservice/canteenmanagement/target/canteenmanagement-0.0.1-SNAPSHOT.war ./canteenmanagement.war`
    * `cd dist`
-   * `jar -uvf ../ftpXX.war *`
+   * `jar -uvf ../ftcanteenmanagement.war *`
    * `cd ..`
-   * `jar -tvf ftpXX.war`
-   * `cp ftpXX.war /D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/ftpXX.war`
+   * `jar -tvf canteenmanagement.war`
+   * `cp canteenmanagement.war /D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/canteenmanagement.war`
    * Notice that the tail terminal shows that the new version of the web application archive is now getting deployed
-   * Open Chrome browser and navigate to http://localhost:8080/ftpXX/
-   * You should be able to see the employee ids as you have entered them in the local mysql database
+   * Open Chrome browser and navigate to http://localhost:8080/canteenmanagement/api/menu
+   * You should be able to see the Menu ids, food names and vendor ids  as you have entered them in the local mysql database
 
 # Workshop material - Day #3 - Git workflow
 
@@ -269,7 +268,7 @@ Play as many rounds as needed till everyone is comfortable with git conflict res
 
   * Create a free e-mail id at gmail with user name {your Hexaware e-mail id}.hexaware. e.g., KrishnaKumar.hexaware@gmail.com  and use this id for Trello login 
 
-  * Create a board for your project as "ftpXX"
+  * Create a board for your project as "canteenmanagement"
 
   * [Team member #1] Create a "Product Backlog" [List] to describe a  user story : "Demonstrate team familiarity with git workflow, both as a developer and as a reviewer"
 
@@ -283,7 +282,7 @@ Play as many rounds as needed till everyone is comfortable with git conflict res
      * Summary: "As a git user, I, [full name], will demo my ability to use git as a review by reviewing and merging another team member's pull request of a tictactoe board change"
      * Assign these user stories to you  (develoepr/reviewer) and your neighbour (reviwer/develoepr) 
   * [Team member #3]
-     * Create "Current Sprint" with "ftpXX Sprint 1" as label 
+     * Create "Current Sprint" with "canteenmanagement Sprint 1" as label 
      * Drag all stories /task into “To do” list
        * Due Date: start date being today and end date being tomorrow
        
