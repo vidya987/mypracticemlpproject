@@ -170,10 +170,10 @@ IdentityFile ~/.ssh/id_rsa
     * Go back to Gitbash and clone the project
     * `pwd` -- Check and verify that the current working directory is C:\users\Hvuser/workspace
     * `git clone ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/FTP-fork-me-CMS `
-    * `cd canteenmanagement`
+    * `cd FTPXX`
     * `git status`
   * open Visual Studio (VS) Code
-    * Open folder c:\users\Hvuser\workspace\canteenmanagement
+    * Open folder c:\users\Hvuser\workspace\FTPXX
     * Browse the directories to understand the repository structure
 
 # Workshop material - Day #2 - MySQL Workbench/Cli/Curl/Browser to interact w/ application
