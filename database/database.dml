@@ -2,17 +2,14 @@
 use canteenmanagement;
 
 
-insert into VENDOR values(1001);
-insert into VENDOR values(1002);
 
-SELECT * FROM VRNDOR;
+insert into MENU values(101);
 
-insert into MENU values(1,'NORTH INDIAN VEG',1001);
+insert into MENU values(102);
 
-insert into MENU values(1,'NORTH INDIAN NON VEG',1001);
+insert into MENU values(103);
 
-insert into MENU values(1,'SOUTH INDIAN VEG',1002);
+insert into MENU values(104);
 
-insert into MENU values(1,'SOUTH INDIAN VEG',1002);
+insert into MENU values(105);
 
-SELECT * FROM MENU;

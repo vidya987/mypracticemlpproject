@@ -29,7 +29,7 @@ The objective of week #2 is to get the cli working with showing employee details
   * Database Design
      * Edit Database.ddl for two tables: EMPLOYEE and LEAVE_DETAILS
         * Use the "STANDARDS_AND_GUIDELINES.md" file for the naming conventions to be followed.
-     * Edit Database.dml to insert data into the EMPLOYEE table; The LEAVE_DETAILS table can be blank to start with.
+     * Edit Database.dml to insert data into the Menu table; The  table can be blank to start with.
      * Run the ddls and dmls against your local mysql server
      * Push the changes to remote branch
      * Now, the other team members can pull from branch and run the ddl/dml against their local databases
