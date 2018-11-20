@@ -1,6 +1,11 @@
 package com.hexaware.canteenmanagement.model;
 
+import com.hexaware.canteenmanagement.persistence.DbConnection;
+import com.hexaware.canteenmanagement.persistence.MenuDAO;
+
 import java.util.Objects;
+import java.util.List;
+
 /**
  * Menu class used to display menu information.
  * @author hexware
@@ -15,6 +20,12 @@ public class Menu {
   private int foodId;
   private String foodName;
   private int vendor;
+  /**
+   * Default Constructor.
+   */
+  public Menu() {
+
+  }
 /**
  * @param argFoodId to initialize food id.
  * @param argFoodName to initialize food name.
@@ -78,7 +89,32 @@ public class Menu {
     /**
      * @param argVendor gets the food id.
      */
-  public final void setvendor(final int argVendor) {
+  public final void setVendor(final int argVendor) {
     this.vendor = argVendor;
+  }
+  /**
+   * Call the data base connection.
+   * @return the connection object.
+   */
+  private static MenuDAO dao() {
+    DbConnection db = new DbConnection();
+    return db.getConnect().onDemand(MenuDAO.class);
+  }
+  /**
+   * Call the data base connection.
+   * @return the array of menu object.
+   */
+  public static Menu[] showMenu() {
+    List<Menu> menu = dao().show();
+    return menu.toArray(new Menu[menu.size()]);
+  }
+   /**
+   * Call the data base connection.
+   * @param argFoodId to initialize employee id.
+   * @return the menu object.
+   */
+  public static Menu showFoodItem(final int argFoodId) {
+    Menu menu = dao().findByFoodId(argFoodId);
+    return menu;
   }
 }

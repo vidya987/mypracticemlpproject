@@ -98,7 +98,8 @@
             <systemPropertyVariables>
               <coverage-output>html</coverage-output>
               <coverage-metrics>all</coverage-metrics>
-              <coverage-classes>com.hexaware.ftp72.model.*</coverage-classes>
+              <coverage-classes>com.hexaware.canteenmanagement.model.*</coverage-classes>
+              <coverage-classes>com.hexaware.canteenmanagement.factory.*</coverage-classes>
               <coverage-check>85</coverage-check>
             </systemPropertyVariables>
           </configuration>
