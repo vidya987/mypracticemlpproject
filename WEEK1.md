@@ -181,50 +181,51 @@ IdentityFile ~/.ssh/id_rsa
   * Open MySQL Workbench
   * Open the localhost connection
     * Mac OS: `export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS` and then you can use the command line `mysql -u root -phexawareftpdev`
-  * `CREATE DATABASE canteenmanagement;` and click the lightning button
-  * `CREATE USER 'canteenmanagement'@'localhost' IDENTIFIED BY 'canteenmanagement';`
-  * `GRANT ALL ON canteenmanagement.* TO 'canteenmanagement'@'localhost';`
+  * `CREATE DATABASE FTPXX;` and click the lightning button
+  * `CREATE USER 'FTPXX'@'localhost' IDENTIFIED BY 'FTPXX';`
+  * `GRANT ALL ON FTPXX.* TO 'FTPXX'@'localhost';`
   * Open database/database.ddl in VS code
   * Copy the entire contents to MySQL Workbench
   * Execute the ddl 
-  * Click the table icon against the EMPLOYEE table in the right-hand side schemas section
+  * Click the table icon against the MENU table in the right-hand side schemas section
   * Open database/database.dml in VS code
   * Copy the contents to MySQL Workbench
   * Execute the dml 
-  * Click the table icon against the EMPLOYEE table in the right-hand side schemas section. You should see the data just inserted.
+  * Click the table icon against the MENU table in the right-hand side schemas section. You should see the data just inserted.
   * Play around with
     * SELECT with predicates
     * UPDATE statements with predicates
     * DELETE statements with predicates
-    * At the end of all the playing around, leave the database with 5 records with ids (1000, 2001
+    * At the end of all the playing around, leave the database with 5 records with ids (101,102..
     
   * Next, we will build and run the java code
-  * go to gitbash, ensure you are in workspace/canteenmanagement
+  * go to gitbash, ensure you are in workspace/FTPXX
   * `cd restservice/canteenmanagement`
   * `mvn compile`
   * `mvn exec:java -Dexec.mainClass=com.hexaware.canteenmanagement.util.CliMain`
-    * As expected, the cli displays only the employee id for the employee; we need to do some code changes before the other attributes such as name will start appearing in the cli. But before that we will test the application as a REST service.
+    * As expected, the cli displays only the food id for the MENU; we need to do some code changes before the other attributes 
+    * such as name will start appearing in the cli. But before that we will test the application as a REST service.
     * Due to a bug in the database connection code, after exiting, there will be an error with a stack trace. Ignore this error.
   * Build the war file as follows:
     * `mvn package` -- This build a war (java web archive with the code for the REST service)
-    * `cp target/canteenmanagement-0.0.1-SNAPSHOT.war /D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/canteenmanagement.war`
+    * `cp target/FTPXX-0.0.1-SNAPSHOT.war /D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/FTPXX.war`
     * start tomcat and tail its logs
       * `cd D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16`
       * `rm -rf logs/*`
       * `./bin/startup.sh`
       * `tail -f logs/*`
-      * `curl -vvv http://localhost:8080/canteenmanagement/api/menu | python -m json.tool`
+      * `curl -vvv http://localhost:8080/FTPXX/api/menu`
       * `cd ../../webui/lm-app/`
    * `npm install`
    * `ng build`
-   * `cp ../../restservice/canteenmanagement/target/canteenmanagement-0.0.1-SNAPSHOT.war ./canteenmanagement.war`
+   * `cp ../../restservice/canteenmanagement/target/FTPXX-0.0.1-SNAPSHOT.war ./FTPXX.war`
    * `cd dist`
-   * `jar -uvf ../ftcanteenmanagement.war *`
+   * `jar -uvf ../FTPXX.war *`
    * `cd ..`
-   * `jar -tvf canteenmanagement.war`
-   * `cp canteenmanagement.war /D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/canteenmanagement.war`
+   * `jar -tvf FTPXX.war`
+   * `cp FTPXX.war /D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/canteenmanagement.war`
    * Notice that the tail terminal shows that the new version of the web application archive is now getting deployed
-   * Open Chrome browser and navigate to http://localhost:8080/canteenmanagement/api/menu
+   * Open Chrome browser and navigate to http://localhost:8080/FTPXX/api/menu
    * You should be able to see the Menu ids, food names and vendor ids  as you have entered them in the local mysql database
 
 # Workshop material - Day #3 - Git workflow
@@ -264,11 +265,13 @@ Play as many rounds as needed till everyone is comfortable with git conflict res
 
 # Workshop material - Day #4 - Configure Project Board in Trello for  Managing and Tracking Your Project
 
-  * Login to Trello Project Board with {Your Hexaware e-mail id}.hexaware as  user name; e.g., KrishnaKumar.hexaware@gmail.com;  Please follow the next step to create user name if it is not created 
+  * Login to Trello Project Board with {Your Hexaware e-mail id}.hexaware as  user name; e.g., KrishnaKumar.hexaware@gmail.com; 
+  * Please follow the next step to create user name if it is not created 
 
-  * Create a free e-mail id at gmail with user name {your Hexaware e-mail id}.hexaware. e.g., KrishnaKumar.hexaware@gmail.com  and use this id for Trello login 
+  * Create a free e-mail id at gmail with user name {your Hexaware e-mail id}.hexaware. e.g., KrishnaKumar.hexaware@gmail.com  and
+  * use this id for Trello login 
 
-  * Create a board for your project as "canteenmanagement"
+  * Create a board for your project as "FTPXX"
 
   * [Team member #1] Create a "Product Backlog" [List] to describe a  user story : "Demonstrate team familiarity with git workflow, both as a developer and as a reviewer"
 
@@ -282,7 +285,7 @@ Play as many rounds as needed till everyone is comfortable with git conflict res
      * Summary: "As a git user, I, [full name], will demo my ability to use git as a review by reviewing and merging another team member's pull request of a tictactoe board change"
      * Assign these user stories to you  (develoepr/reviewer) and your neighbour (reviwer/develoepr) 
   * [Team member #3]
-     * Create "Current Sprint" with "canteenmanagement Sprint 1" as label 
+     * Create "Current Sprint" with "FTPXX Sprint 1" as label 
      * Drag all stories /task into “To do” list
        * Due Date: start date being today and end date being tomorrow
        
