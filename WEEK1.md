@@ -170,10 +170,10 @@ IdentityFile ~/.ssh/id_rsa
     * Go back to Gitbash and clone the project
     * `pwd` -- Check and verify that the current working directory is C:\users\Hvuser/workspace
     * `git clone ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/FTP-fork-me-CMS `
-    * `cd FTPXX`
+    * `cd canteenmanagement`
     * `git status`
   * open Visual Studio (VS) Code
-    * Open folder c:\users\Hvuser\workspace\FTPXX
+    * Open folder c:\users\Hvuser\workspace\canteenmanagement
     * Browse the directories to understand the repository structure
 
 # Workshop material - Day #2 - MySQL Workbench/Cli/Curl/Browser to interact w/ application
@@ -181,9 +181,9 @@ IdentityFile ~/.ssh/id_rsa
   * Open MySQL Workbench
   * Open the localhost connection
     * Mac OS: `export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS` and then you can use the command line `mysql -u root -phexawareftpdev`
-  * `CREATE DATABASE FTPXX;` and click the lightning button
-  * `CREATE USER 'FTPXX'@'localhost' IDENTIFIED BY 'FTPXX';`
-  * `GRANT ALL ON FTPXX.* TO 'FTPXX'@'localhost';`
+  * `CREATE DATABASE canteenmanagement;` and click the lightning button
+  * `CREATE USER 'canteenmanagement'@'localhost' IDENTIFIED BY 'canteenmanagement';`
+  * `GRANT ALL ON canteenmanagement.* TO 'canteenmanagement'@'localhost';`
   * Open database/database.ddl in VS code
   * Copy the entire contents to MySQL Workbench
   * Execute the ddl 
@@ -199,7 +199,7 @@ IdentityFile ~/.ssh/id_rsa
     * At the end of all the playing around, leave the database with 5 records with ids (101,102..
     
   * Next, we will build and run the java code
-  * go to gitbash, ensure you are in workspace/FTPXX
+  * go to gitbash, ensure you are in workspace/canteenmanagement
   * `cd restservice/canteenmanagement`
   * `mvn compile`
   * `mvn exec:java -Dexec.mainClass=com.hexaware.canteenmanagement.util.CliMain`
@@ -208,24 +208,24 @@ IdentityFile ~/.ssh/id_rsa
     * Due to a bug in the database connection code, after exiting, there will be an error with a stack trace. Ignore this error.
   * Build the war file as follows:
     * `mvn package` -- This build a war (java web archive with the code for the REST service)
-    * `cp target/FTPXX-0.0.1-SNAPSHOT.war /D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/FTPXX.war`
+    * `cp target/canteenmanagement-0.0.1-SNAPSHOT.war /D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/canteenmanagement.war`
     * start tomcat and tail its logs
       * `cd D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16`
       * `rm -rf logs/*`
       * `./bin/startup.sh`
       * `tail -f logs/*`
-      * `curl -vvv http://localhost:8080/FTPXX/api/menu`
+      * `curl -vvv http://localhost:8080/canteenmanagement/api/menu`
       * `cd ../../webui/lm-app/`
    * `npm install`
    * `ng build`
-   * `cp ../../restservice/canteenmanagement/target/FTPXX-0.0.1-SNAPSHOT.war ./FTPXX.war`
+   * `cp ../../restservice/canteenmanagement/target/canteenmanagement-0.0.1-SNAPSHOT.war ./canteenmanagement.war`
    * `cd dist`
-   * `jar -uvf ../FTPXX.war *`
+   * `jar -uvf ../canteenmanagement.war *`
    * `cd ..`
-   * `jar -tvf FTPXX.war`
-   * `cp FTPXX.war /D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/canteenmanagement.war`
+   * `jar -tvf canteenmanagement.war`
+   * `cp canteenmanagement.war /D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/canteenmanagement.war`
    * Notice that the tail terminal shows that the new version of the web application archive is now getting deployed
-   * Open Chrome browser and navigate to http://localhost:8080/FTPXX/api/menu
+   * Open Chrome browser and navigate to http://localhost:8080/canteenmanagement/api/menu
    * You should be able to see the Menu ids, food names and vendor ids  as you have entered them in the local mysql database
 
 # Workshop material - Day #3 - Git workflow
