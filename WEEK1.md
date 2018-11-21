@@ -181,9 +181,9 @@ IdentityFile ~/.ssh/id_rsa
   * Open MySQL Workbench
   * Open the localhost connection
     * Mac OS: `export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS` and then you can use the command line `mysql -u root -phexawareftpdev`
-  * `CREATE DATABASE canteenmanagement;` and click the lightning button
-  * `CREATE USER 'canteenmanagement'@'localhost' IDENTIFIED BY 'canteenmanagement';`
-  * `GRANT ALL ON canteenmanagement.* TO 'canteenmanagement'@'localhost';`
+  * `CREATE DATABASE FTPXX;` and click the lightning button
+  * `CREATE USER 'FTPXX'@'localhost' IDENTIFIED BY 'FTPXX';`
+  * `GRANT ALL ON FTPXX.* TO 'FTPXX'@'localhost';`
   * Open database/database.ddl in VS code
   * Copy the entire contents to MySQL Workbench
   * Execute the ddl 
@@ -202,7 +202,7 @@ IdentityFile ~/.ssh/id_rsa
   * go to gitbash, ensure you are in workspace/canteenmanagement
   * `cd restservice/canteenmanagement`
   * `mvn compile`
-  * `mvn exec:java -Dexec.mainClass=com.hexaware.canteenmanagement.util.CliMain`
+  * `mvn exec:java -Dexec.mainClass=com.hexaware.FTPXX.util.CliMain`
     * As expected, the cli displays only the food id for the MENU; we need to do some code changes before the other attributes 
     * such as name will start appearing in the cli. But before that we will test the application as a REST service.
     * Due to a bug in the database connection code, after exiting, there will be an error with a stack trace. Ignore this error.
