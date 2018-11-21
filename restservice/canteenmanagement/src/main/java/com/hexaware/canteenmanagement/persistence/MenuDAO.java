@@ -1,8 +1,8 @@
-package com.hexaware.canteenmanagement.persistence;
+package com.hexaware.FTPXX.persistence;
 import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.customizers.Mapper;
 import java.util.List;
-import com.hexaware.canteenmanagement.model.Menu;
+import com.hexaware.FTPXX.model.Menu;
 /**
  * MenuDAO class used to fetch data from data base.
  * @author hexware
