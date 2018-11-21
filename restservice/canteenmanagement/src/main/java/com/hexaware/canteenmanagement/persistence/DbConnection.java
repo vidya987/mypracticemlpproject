@@ -1,4 +1,4 @@
-package com.hexaware.canteenmanagement.persistence;
+package com.hexaware.FTPXX.persistence;
 
 import org.skife.jdbi.v2.DBI;
 
@@ -16,7 +16,7 @@ public class DbConnection {
       if (dbc == null || dbc.equals("")) {
         dbc = "localhost:3306";
       }
-      DBI dbi = new DBI("jdbc:mysql://" + dbc + "/canteenmanagement?useSSL=false", "root", "Password123");
+      DBI dbi = new DBI("jdbc:mysql://" + dbc + "/FTPXX?useSSL=false", "FTPXX", "FTPXX");
       return dbi;
     } catch (ClassNotFoundException e) {
       throw new RuntimeException(e);
