@@ -3,7 +3,7 @@ We need to build a canteen management application.  This is an application,
  As a customer,
 •	can view personal and wallet details 
 •	can order food items
-•	can check the status of  ordered food items  
+•	can check the history of  ordered food items  
  As a Food Vendor,
 •	can view and update (accept/deny) the ordered food items status 
 Customer Login:
@@ -25,22 +25,21 @@ Wallet balance should not go negative.
 Customer can view their order status.
 
 # Application flow
-The skeletal application contains a simple screen w/ a list of food items (Menu).
+The skeletal application contains a simple screen with list of food items (Menu).
   * The "place order" button is the default button (i.e., pressing "Place order" invokes the login function).
   * Customer should enter his customer id will take the customer to "place the order screen".
-  * Customer should enter the item id and quantity and "Order" button to place the order 
+  * Customer should enter the item id and quantity and "Place Order" button to place the order 
   * On Wallet money balance the order should be accepted or rejected with proper error message.
   * "Back to Menu" takes the customer back to the Menu list screen from all the screen.
-  * Entering the "Login button " from main screen will take to the Food Vendor login. 
+  * Entering the "Vendor Admin Login” button in the Home screen will take to the Food Vendor login. 
 
 # Must-Have
   * Following functionalities are must to have-
   1.View all food items.
-  2.Enter food items with price.
-  3.Order food with auto cancelation if no enough money in Wallet for the food ordered.
-  5.Food order history and status for customer view for their id. 
-  6. Food ordered and their status for food vendor view. 
-  7. Food order accepted /denied by Food vendor with proper reason.  
+  2.Enter the quantity of the food item selected, order date should generate automatically.
+  3. Order should be placed on adequate Wallet balance.  
+  4.Order history will display the list of orders placed by customer.
+ 5. Food Vendor can view the orders and accept/cancel with proper comments. 
   * Functionality available via
      * Cli
      * Curl
