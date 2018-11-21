@@ -35,11 +35,11 @@ The skeletal application contains a simple screen with list of food items (Menu)
 
 # Must-Have
   * Following functionalities are must to have-
-  1.View all food items.
-  2.Enter the quantity of the food item selected, order date should generate automatically.
-  3. Order should be placed on adequate Wallet balance.  
-  4.Order history will display the list of orders placed by customer.
- 5. Food Vendor can view the orders and accept/cancel with proper comments. 
+  * 1.View all food items.
+  * 2.Enter the quantity of the food item selected, order date should generate automatically.
+  * 3. Order should be placed on adequate Wallet balance.  
+  * 4.Order history will display the list of orders placed by customer.
+  * 5. Food Vendor can view the orders and accept/cancel with proper comments. 
   * Functionality available via
      * Cli
      * Curl
@@ -55,7 +55,7 @@ The skeletal application contains a simple screen with list of food items (Menu)
   * Ability to select multiple food items at once via multi-select/select-all.
   * Authentication of the Food Vendor using password, password-reset etc.. (client and server).
   * Adding/Editing Menu details
- * Adding memory to wallet through various mode such as Net Banking/Credit/Debit cards etc.
+  * Adding memory to wallet through various mode such as Net Banking/Credit/Debit cards etc.
   * Cancellation of food ordered by customer.
   * Customer can order different vendor will create a single order and internally it should create multiple orders for each product and vendor.
   * Partial acceptance and deny of the order.
