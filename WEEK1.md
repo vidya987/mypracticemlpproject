@@ -208,24 +208,18 @@ IdentityFile ~/.ssh/id_rsa
     * Due to a bug in the database connection code, after exiting, there will be an error with a stack trace. Ignore this error.
   * Build the war file as follows:
     * `mvn package` -- This build a war (java web archive with the code for the REST service)
-    * `cp target/canteenmanagement-0.0.1-SNAPSHOT.war /D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/canteenmanagement.war`
+    * `cp target/FTPXX-0.0.1-SNAPSHOT.war /D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/FTPXX.war`
     * start tomcat and tail its logs
       * `cd D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16`
       * `rm -rf logs/*`
       * `./bin/startup.sh`
       * `tail -f logs/*`
-      * `curl -vvv http://localhost:8080/canteenmanagement/api/menu`
+      * `curl -vvv http://localhost:8080/FTPXX/api/menu`
       * `cd ../../webui/lm-app/`
    * `npm install`
-   * `ng build`
-   * `cp ../../restservice/canteenmanagement/target/canteenmanagement-0.0.1-SNAPSHOT.war ./canteenmanagement.war`
-   * `cd dist`
-   * `jar -uvf ../canteenmanagement.war *`
-   * `cd ..`
-   * `jar -tvf canteenmanagement.war`
-   * `cp canteenmanagement.war /D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webapps/canteenmanagement.war`
+   * `ng serve`
    * Notice that the tail terminal shows that the new version of the web application archive is now getting deployed
-   * Open Chrome browser and navigate to http://localhost:8080/canteenmanagement/api/menu
+   * Open Chrome browser and navigate to http://localhost:4200
    * You should be able to see the Menu ids, food names and vendor ids  as you have entered them in the local mysql database
 
 # Workshop material - Day #3 - Git workflow
