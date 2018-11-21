@@ -1,6 +1,6 @@
-package com.hexaware.canteenmanagement.model;
+package com.hexaware.FTPXX.model;
 
-import com.hexaware.canteenmanagement.persistence.MenuDAO;
+import com.hexaware.FTPXX.persistence.MenuDAO;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
