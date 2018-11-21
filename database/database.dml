@@ -1,4 +1,4 @@
---change the database to your team id
+-- change the database to your team id
 use canteenmanagement;
 
 
