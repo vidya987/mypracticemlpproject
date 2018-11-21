@@ -1,9 +1,9 @@
-package com.hexaware.canteenmanagement.persistence;
+package com.hexaware.FTPXX.persistence;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.hexaware.canteenmanagement.model.Menu;
+import com.hexaware.FTPXX.model.Menu;
 
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 import org.skife.jdbi.v2.StatementContext;
