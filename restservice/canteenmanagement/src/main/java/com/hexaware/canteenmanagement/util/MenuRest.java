@@ -1,11 +1,11 @@
-package com.hexaware.canteenmanagement.util;
+package com.hexaware.FTPXX.util;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import com.hexaware.canteenmanagement.model.Menu;
-import com.hexaware.canteenmanagement.factory.MenuFactory;
+import com.hexaware.FTPXX.model.Menu;
+import com.hexaware.FTPXX.factory.MenuFactory;
 
 /**
  * This class provides a REST interface for the employee entity.
