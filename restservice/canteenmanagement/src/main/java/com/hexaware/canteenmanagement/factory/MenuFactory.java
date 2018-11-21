@@ -1,10 +1,10 @@
-package com.hexaware.canteenmanagement.factory;
+package com.hexaware.FTPXX.factory;
 
-import com.hexaware.canteenmanagement.persistence.MenuDAO;
-import com.hexaware.canteenmanagement.persistence.DbConnection;
+import com.hexaware.FTPXX.persistence.MenuDAO;
+import com.hexaware.FTPXX.persistence.DbConnection;
 import java.util.List;
 
-import com.hexaware.canteenmanagement.model.Menu;
+import com.hexaware.FTPXX.model.Menu;
 /**
  * MenuFactory class used to fetch menu data from database.
  * @author hexware
