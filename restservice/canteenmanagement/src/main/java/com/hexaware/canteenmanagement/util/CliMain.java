@@ -1,10 +1,7 @@
-
-package com.hexaware.canteenmanagement.util;
+package com.hexaware.FTPXX.util;
 import java.util.Scanner;
-import com.hexaware.canteenmanagement.factory.MenuFactory;
-//import com.hexaware.canteenmanagement.factory.CustomerFactory;
-import com.hexaware.canteenmanagement.model.Menu;
-//import com.hexaware.canteenmanagement.model.Customer;
+import com.hexaware.FTPXX.factory.MenuFactory;
+import com.hexaware.FTPXX.model.Menu;
 /**
  * CliMain used as Client interface for java coading.
  * @author hexware
@@ -50,7 +47,6 @@ class CliMain {
   private void showFullMenu() {
     Menu[] menu = MenuFactory.showMenu();
     System.out.println("Menu_Id");
-    //System.out.println("Food_Id  Food_Name   Quantity   Price    vendor");
     for (Menu m : menu) {
       System.out.println(m.getFoodId());
     }
