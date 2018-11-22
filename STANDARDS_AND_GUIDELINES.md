@@ -16,15 +16,15 @@
 ## Table naming conventions
   * ALL CAPS
   * underscores allowed
-  * e.g., EMPLOYEE, MENU
+  * e.g., CUSTOMER, MENU
   
 ## Column naming conventions
   * ALL CAPS
   * underscores allowed
   * Use a three character prefix derived from the table name for all the columns
-  * e.g., EMP_ID, EMP_NAME
+  * e.g., CUS_ID, CUS_NAME
   * Except for foreign keys, where you will use the foreign key tables' prefix
-  * e.g., in ORDERS table, use EMP_ID as the foreign key
+  * e.g., in ORDERS table, use CUS_ID as the foreign key
 
 # Java naming conventions
 
