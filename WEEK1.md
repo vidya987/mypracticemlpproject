@@ -215,7 +215,7 @@ IdentityFile ~/.ssh/id_rsa
       * `./bin/startup.sh`
       * `tail -f logs/*`
       * `curl -vvv http://localhost:8080/FTPXX/api/menu`
-      * `cd ../../webui/lm-app/`
+      * `cd ../../webui/lmApp/`
    * `npm install`
    * `ng serve`
    * Notice that the tail terminal shows that the new version of the web application archive is now getting deployed
