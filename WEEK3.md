@@ -28,7 +28,7 @@ Devops/Continuous Integration/Continuous Delivery/Build Automation/Jenkins
 Week #3 Sprint Goals:
 * Trello Project Board User Story: "As a Cli user of the canteenmanagement application, as a Customer, I should be able to order the food."
 * Trello Project Board User Story: "As a Cli user of the canteenmanagement application, as an Customer, I should be able to see all my food orders."
-* Trello Project Board User Story: "As a Cli user of the canteenmanagement application, as a Vendor admin, I should be able to see the food order with all status("placed order","Order in process","Delivered").
+* Trello Project Board User Story: "As a Cli user of the canteenmanagement application, as a Vendor admin, I should be able to see the food order with all status("Placed Order","Order In Process","Delivered").
 * Trello  Project Board User Story: "As a Cli user of the canteenmanagement application, as a Vendor admin, I should be able to accept/cancel any placed order in canteenmanagement applications".
 * Trello Project Board Task: "Make the mvn package succeed"
 
@@ -52,7 +52,7 @@ Invalid input for the data type
 Including for the menu option
 Non-existing employee id
 Apply wallet balance not sufficient
-Order placed <-> Order Processed <-> Order Canceled three-way state transitions
+Order placed <-> Order Processed <-> Order Cancelled three-way state transitions
 Advanced tests
 Reading material
 Must-Read
