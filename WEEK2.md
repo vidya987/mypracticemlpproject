@@ -15,15 +15,15 @@ The objective of week #2 is to get the cli working with showing menu details - f
     * Create  task for database design changes  
        * A "Card" should  be included to describe the below task in the Sprint Backlog (board) 
           * Task : "Create a database design for the canteenmanagement application", and 
-          * Ticket Number (manually typed) shoudld be included as prefix in the Task           
+          * Ticket Number (manually typed) should be included as prefix in the Task           
        * A "Card" should be included to describe the below task in the Sprint Backlog 
           * Task: "Change the model/Menu java class for the columns identified"
-       * A "Card" should be incldued to desribe the below task in the Sprint Backlog
+       * A "Card" should be included to describe the below task in the Sprint Backlog
           * Task: "Change the persistence/Menu DAO/mapper java classes for the new attributes"           
-          * Ticket Number (manually typed) shoudld be included as prefix in the Task  
-       * A "Card" should be incldued to desribe the below task in the Sprint Backlog
+          * Ticket Number (manually typed) should be included as prefix in the Task  
+       * A "Card" should be included to describe the below task in the Sprint Backlog
           * Task: "Change the Util.CliMain java class for the new attributes"  
-          * Ticket Number (manually typed) shoudld be included as prefix in the Task                 
+          * Ticket Number (manually typed) should be included as prefix in the Task                 
   * Ensure that once after creating all your task moved to "To do" column in the project board
   * Move the task for "To do" to "In Progress" column and start your task  
   * Database Design
