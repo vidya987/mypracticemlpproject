@@ -169,11 +169,11 @@ IdentityFile ~/.ssh/id_rsa
     
     * Go back to Gitbash and clone the project
     * `pwd` -- Check and verify that the current working directory is C:\users\Hvuser/workspace
-    * `git clone ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/FTP-fork-me-CMS `
-    * `cd FTP-fork-me-CMS`
+    * `git clone ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/FTPXX `
+    * `cd FTPXX`
     * `git status`
   * open Visual Studio (VS) Code
-    * Open folder c:\users\Hvuser\workspace\FTP-fork-me-CMS
+    * Open folder c:\users\Hvuser\workspace\FTPXX
     * Browse the directories to understand the repository structure
 
 # Workshop material - Day #2 - MySQL Workbench/Cli/Curl/Browser to interact w/ application
@@ -199,7 +199,7 @@ IdentityFile ~/.ssh/id_rsa
     * At the end of all the playing around, leave the database with 5 records with ids (101,102..
     
   * Next, we will build and run the java code
-  * go to gitbash, ensure you are in workspace/FTP-fork-me-CMS
+  * go to gitbash, ensure you are in workspace/FTPXX
   * `cd restservice/canteenmanagement`
   * `mvn compile`
   * `mvn exec:java -Dexec.mainClass=com.hexaware.FTPXX.util.CliMain`
