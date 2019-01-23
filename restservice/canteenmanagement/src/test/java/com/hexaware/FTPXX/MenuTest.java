@@ -1,7 +1,7 @@
 package com.hexaware.FTPXX.model;
 
 import com.hexaware.FTPXX.persistence.MenuDAO;
-
+import com.hexaware.FTPXX.factory.MenuFactory;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
@@ -57,13 +57,13 @@ public class MenuTest {
         dao.show(); result = new ArrayList<Menu>();
       }
     };
-    new MockUp<Menu>() {
+    new MockUp<MenuFactory>() {
       @Mock
       MenuDAO dao() {
         return dao;
       }
     };
-    Menu[] me = Menu.showMenu();
+    Menu[] me = MenuFactory.showMenu();
     assertEquals(0, me.length);
   }
   /**
@@ -82,13 +82,13 @@ public class MenuTest {
         dao.show(); result = mn;
       }
     };
-    new MockUp<Menu>() {
+    new MockUp<MenuFactory>() {
       @Mock
       MenuDAO dao() {
         return dao;
       }
     };
-    Menu[] mn1 = Menu.showMenu();
+    Menu[] mn1 = MenuFactory.showMenu();
     assertEquals(2, mn1.length);
     assertEquals(new Menu(100).getFoodId(),
         mn1[0].getFoodId());

@@ -1,10 +1,5 @@
 package com.hexaware.FTPXX.model;
-
-import com.hexaware.FTPXX.persistence.DbConnection;
-import com.hexaware.FTPXX.persistence.MenuDAO;
-
 import java.util.Objects;
-import java.util.List;
 
 /**
  * Menu class used to display menu information.
@@ -57,21 +52,5 @@ public class Menu {
      */
   public final void setFoodId(final int argFoodId) {
     this.foodId = argFoodId;
-  }
-  /**
-   * Call the data base connection.
-   * @return the connection object.
-   */
-  private static MenuDAO dao() {
-    DbConnection db = new DbConnection();
-    return db.getConnect().onDemand(MenuDAO.class);
-  }
-  /**
-   * Call the data base connection.
-   * @return the array of menu object.
-   */
-  public static Menu[] showMenu() {
-    List<Menu> menu = dao().show();
-    return menu.toArray(new Menu[menu.size()]);
   }
 }

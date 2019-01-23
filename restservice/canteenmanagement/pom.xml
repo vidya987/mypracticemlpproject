@@ -98,7 +98,7 @@
             <systemPropertyVariables>
               <coverage-output>html</coverage-output>
               <coverage-metrics>all</coverage-metrics>
-              <coverage-excludes>com.hexaware.ftpxx.util.*</coverage-excludes>
+              <coverage-classes>com.hexaware.FTPXX.model.*</coverage-classes>
               <coverage-check>85</coverage-check>
             </systemPropertyVariables>
           </configuration>
@@ -128,12 +128,7 @@
     </dependencies>
   </dependencyManagement>
   <dependencies>
-    <dependency>
-    <groupId>com.twilio.sdk</groupId>
-    <artifactId>twilio</artifactId>
-    <version>7.33.0</version>
-    </dependency>
-    <dependency>
+      <dependency>
       <groupId>org.glassfish.jersey.containers</groupId>
       <artifactId>jersey-container-servlet-core</artifactId>
     </dependency>
