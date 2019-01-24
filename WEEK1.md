@@ -164,7 +164,8 @@ IdentityFile ~/.ssh/id_rsa
 
   ** Clone repository at Gitbash **
     * Open https://console.aws.amazon.com/codecommit
-     Choose the repository you want to connect to from the list. This opens the Code page for that repository
+     Use the following URL to access your repository
+      https://console.aws.amazon.com/iam/home?region=us-east-2#/groups/FTPXX
     * Choose Clone URL, and then copy the SSH URL.
     
     * Go back to Gitbash and clone the project
