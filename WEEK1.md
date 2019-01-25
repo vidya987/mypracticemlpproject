@@ -164,10 +164,9 @@ IdentityFile ~/.ssh/id_rsa
 
   ** Clone repository at Gitbash **
     * Open https://console.aws.amazon.com/codecommit
-     Use the following URL to access your repository
-      https://console.aws.amazon.com/iam/home?region=us-east-2#/groups/FTPXX
-    * Choose Clone URL, and then copy the SSH URL.
-    
+    * Use the following URL to access your repository
+    * https://us-east-2.console.aws.amazon.com/codesuite/codecommit/repositories/FTPXX/browse?region=us-east-2#
+    * Choose Clone URL, and then copy the SSH URL.    
     * Go back to Gitbash and clone the project
     * `pwd` -- Check and verify that the current working directory is C:\users\Hvuser/workspace
     * `git clone ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/FTPXX `
