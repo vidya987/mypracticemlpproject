@@ -30,9 +30,9 @@ The skeletal application contains a simple screen with list of food items (Menu)
   * Customer should enter his customer id will take the customer to "place the order screen" along with the food id he selected.
   * Customer should enter the item id and quantity and "Place Order" button to place the order 
   * On existing balance amount in customer Wallet, the order should be accepted or rejected with proper error message.
-  * If the order is accepted and the order detail should stored in the order table and display the token number using random calculation.
-  * (Random token number should be displayed only for java module and during rest call application should display 
-  *    order id from the database instead of random number as token)
+  * If the order is accepted, the token number should be generate using Random functionality and the order detail should stored 
+    in order table along with token number.
+  * The token number displayed as confirmation of the order should be fetched from the database.
   * "Back to Menu" takes the customer back to the Menu list screen from all the screen.
   * Entering the "Vendor Admin Login” button in the Home screen will take to the Food Vendor login. 
 
