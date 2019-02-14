@@ -27,9 +27,12 @@ Customer can view their order status.
 # Application flow
 The skeletal application contains a simple screen with list of food items (Menu).
   * The "place order" button is the default button (i.e., pressing "Place order" invokes the login function).
-  * Customer should enter his customer id will take the customer to "place the order screen".
+  * Customer should enter his customer id will take the customer to "place the order screen" along with the food id he selected.
   * Customer should enter the item id and quantity and "Place Order" button to place the order 
-  * On Wallet money balance the order should be accepted or rejected with proper error message.
+  * On existing balance amount in customer Wallet, the order should be accepted or rejected with proper error message.
+  * If the order is accepted and the order detail should stored in the order table and display the token number using random calculation.
+  * (Random token number should be displayed only for java module and during rest call application should display 
+  *    order id from the database instead of random number as token)
   * "Back to Menu" takes the customer back to the Menu list screen from all the screen.
   * Entering the "Vendor Admin Login” button in the Home screen will take to the Food Vendor login. 
 
@@ -48,14 +51,27 @@ The skeletal application contains a simple screen with list of food items (Menu)
      * the server side, to make sure the data is clean no matter what the source and,
      * the client side, to provide a responsive user interface
      * Type validations
-     * Semantic validations     
+     * Semantic validations   
+  * Business Logic
+     * Login validation for Customer and Vendor.
+     * Display history for specific Customer and specific vendor(All the status("Pending","Delivered","Order Placed")).
+     * Display Wallet Balance for the specific customer.
+     * Calculate the esimated time(during peek hours estimated time should be higher than normal hours)and store it in table.   
+     * Storing of food ordered detail will be stored in ordered table only after getting the approval from customer
+     *  (Once after calculating the total price for the food ordered, the amount should be minus from existing wallet amount
+     *    and display it to the customer (total price,walet amount before deduction and after deduction) and get the confirmation from 
+     *     the Customer and store the order detail in order table and changed wallet amount in to customer table.
+     * Deduction and Addition of Wallet amount depends on food ordered and cancelled.
+     * Generate Random number and display as token number.
+     * Vendor should accept or cancel the order based on specific reason and if it cancelled, the wallet amount should be revert back
+       to the table in the DB and display the reverted amount (not the wallet balance)
 # Nice-To-Have
   * Photos of the food items in the menu.
   * Multiple Vendors with their specialization (North Indian, South Indian, Veg, Non veg, etc..).
   * Ability to select multiple food items at once via multi-select/select-all.
-  * Authentication of the Food Vendor using password, password-reset etc.. (client and server).
+  * Creating Login for the Food Vendor using password, password-reset etc.. (client and server).
   * Adding/Editing Menu details
-  * Adding memory to wallet through various mode such as Net Banking/Credit/Debit cards etc.
+  * Feeding money to wallet through various mode such as Net Banking/Credit/Debit cards etc.
   * Cancellation of food ordered by customer.
   * Customer can order different vendor will create a single order and internally it should create multiple orders for each product and vendor.
   * Partial acceptance and deny of the order.
