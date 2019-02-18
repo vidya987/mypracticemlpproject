@@ -8,14 +8,14 @@ We need to build a canteen management application.  This is an application,
 •	can view and update (accept/deny) the ordered food items status 
 Customer Login:
    * Shows list of available food items (menu) details.
-   * Shows personal and Wallet details
-   * can order food.
-	* The order will be accepted only if the customer had enough money for the ordered food in
+   * Shows personal and Wallet details.
+   * Customer can order food.
+   * The order will be accepted only,when the customer had enough money for the ordered food in
 	  His/her wallet.
-
    * can check the status of their delivery.
    * can check their order history.  
 Food Vendor :
+    * Customer can view his personal detail and order history.
 	* can view the order request from customers.
 	* can accept or deny the entire order.
 customer details (custId, custName, etc..) are stored along with their wallet balance.
@@ -54,15 +54,15 @@ The skeletal application contains a simple screen with list of food items (Menu)
      * Semantic validations   
   * Business Logic
      * Login validation for Customer and Vendor.
-     * Display history for specific Customer and specific vendor(All the status("Pending","Delivered","Order Placed")).
+     * Display history for specific Customer and specific vendor(All the status("Order Placed","Order Accepted","Order Cancelled")).
      * Display Wallet Balance for the specific customer.
-     * Calculate the esimated time(during peek hours estimated time should be higher than normal hours)and store it in table.   
-     * Storing of food ordered detail will be stored in ordered table only after getting the approval from customer
-     *  (Once after calculating the total price for the food ordered, the amount should be minus from existing wallet amount
-     *    and display it to the customer (total price,walet amount before deduction and after deduction) and get the confirmation from 
-     *     the Customer and store the order detail in order table and changed wallet amount in to customer table.
+     * Calculate the estimated time for food they are providing and store it in table.   
+     * Storing of food ordered detail will be stored in ordered table only, after getting the approval from customer
+         (Once after calculating the total price for the food ordered, the amount should be minus from existing wallet amount
+          and display it to the customer (total price,wallet amount before deduction and after deduction) and get the confirmation from 
+          the Customer and store the order detail in order table and changed wallet amount in to customer table).
      * Deduction and Addition of Wallet amount depends on food ordered and cancelled.
-     * Generate Random number and display as token number.
+     * Generate Random number and display as token number and should be stored in DB.
      * Vendor should accept or cancel the order based on specific reason and if it cancelled, the wallet amount should be revert back
        to the table in the DB and display the reverted amount (not the wallet balance)
 # Nice-To-Have
