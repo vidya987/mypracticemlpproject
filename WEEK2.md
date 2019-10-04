@@ -1,10 +1,9 @@
 # Week #2: Course Materials
+ * MySql database
 
 The objective of week #2 is to get the cli working with showing menu details - foodname,quantity,price,VendorId etc. From this week onwards, we will be doing sprint planning and sprint review/retrospective every week.
 
 ## Java (Will be continued in Week#3 as well)
-
-## Junit (Will be continued in Week#3 as well)
 
 ## Maven
 

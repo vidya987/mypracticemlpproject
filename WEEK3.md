@@ -1,4 +1,8 @@
 Week #3: Course Materials
+  * Java
+  * JDBI
+  * Maven
+
 The primary objective of week #3 is to complete the Cli fully to list all Menu /Ordering the food/accept/cancel canteenmanagement applications.
 
 We will also start doing standups from this week. https://www.mountaingoatsoftware.com/agile/scrum/meetings/daily-scrum

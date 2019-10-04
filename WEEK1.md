@@ -9,7 +9,7 @@
 
 ## Goals of the program
   * "Learning to learn"
-    * Git, TRELLO (Project Management Tool), Jenkins, MySQL, SQL, JDBI, Java, Junit, Jmockit, Jersey, Maven, REST, Json, RestAssured, Javascript, HTML, CSS, Angular 4/6, Karma/Jasmine, Selenium/Protractor
+    * Operating system and Computer Network, Problem Solving and DataStructure,  Git, TRELLO (Project Management Tool), Jenkins, MySQL, SQL, JDBI, Java, Junit, Jmockit, Jersey, Maven, REST, Json, RestAssured, Javascript, HTML, CSS, Angular 4/6, Karma/Jasmine, Selenium/Protractor
   * Productivity hacks
     * google
     * command line (+ simple IDE)
