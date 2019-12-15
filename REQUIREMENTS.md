@@ -1,12 +1,12 @@
 # High level requirements
 We need to build a canteen management application.  This is an application,
- As a customer,
-•	can view personal and wallet details 
-•	can order food items
-•	can check the history of  ordered food items  
- As a Food Vendor,
-•	can view and update (accept/deny) the ordered food items status 
-Customer Login:
+## As a customer,
+   * can view personal and wallet details 
+   * can order food items
+	* can check the history of  ordered food items  
+## As a Food Vendor,
+   * can view and update (accept/deny) the ordered food items status 
+## Customer Login:
    * Shows list of available food items (menu) details.
    * Shows personal and Wallet details.
    * Customer can order food.
@@ -14,8 +14,8 @@ Customer Login:
 	  His/her wallet.
    * can check the status of their delivery.
    * can check their order history.  
-Food Vendor :
-    * Customer can view his personal detail and order history.
+## Food Vendor :
+   * Customer can view his personal detail and order history.
 	* can view the order request from customers.
 	* can accept or deny the entire order.
 customer details (custId, custName, etc..) are stored along with their wallet balance.
@@ -38,11 +38,11 @@ The skeletal application contains a simple screen with list of food items (Menu)
 
 # Must-Have
   * Following functionalities are must to have-
-  * 1.View all food items.
-  * 2.Enter the quantity of the food item selected, order date should generate automatically.
-  * 3. Order should be placed on adequate Wallet balance.  
-  * 4.Order history will display the list of orders placed by customer.
-  * 5. Food Vendor can view the orders and accept/cancel with proper comments. 
+      1. View all food items.
+      2. Enter the quantity of the food item selected, order date should be generated automatically.
+      3. Order should be placed on adequate Wallet balance.  
+      4. Order history will display the list of orders placed by customer.
+      5. Food Vendor can view the orders and accept/cancel with proper comments. 
   * Functionality available via
      * Cli
      * Curl
