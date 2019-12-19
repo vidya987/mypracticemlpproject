@@ -1,4 +1,4 @@
-package com.hexaware.FTPXX.persistence;
+package com.hexaware.MLPXX.persistence;
 
 import org.skife.jdbi.v2.DBI;
 
@@ -16,7 +16,7 @@ public class DbConnection {
       if (dbc == null || dbc.equals("")) {
         dbc = "localhost:3306";
       }
-      DBI dbi = new DBI("jdbc:mysql://" + dbc + "/FTPXX?useSSL=false", "FTPXX", "FTPXX");
+      DBI dbi = new DBI("jdbc:mysql://" + dbc + "/MLPXX?useSSL=false", "MLPXX", "MLPXX");
       return dbi;
     } catch (ClassNotFoundException e) {
       throw new RuntimeException(e);

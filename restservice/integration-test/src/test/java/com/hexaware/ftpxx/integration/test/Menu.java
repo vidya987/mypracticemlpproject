@@ -1,6 +1,6 @@
-package com.hexaware.ftpxx.integration.test;
+package com.hexaware.MLPXX.integration.test;
 import java.util.Objects;
-import com.hexaware.ftpxx.integration.test.CommonUtil;
+import com.hexaware.MLPXX.integration.test.CommonUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 

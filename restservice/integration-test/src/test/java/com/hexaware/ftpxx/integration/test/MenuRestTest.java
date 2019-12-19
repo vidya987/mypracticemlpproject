@@ -1,4 +1,4 @@
-package com.hexaware.ftpxx.integration.test;
+package com.hexaware.MLPXX.integration.test;
 
 import java.util.Arrays;
 import java.util.Date;

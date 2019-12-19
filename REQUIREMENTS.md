@@ -58,13 +58,14 @@ The skeletal application contains a simple screen with list of food items (Menu)
      * Display Wallet Balance for the specific customer.
      * Calculate the estimated time for food they are providing and store it in table.   
      * Storing of food ordered detail will be stored in ordered table only, after getting the approval from customer
-         (Once after calculating the total price for the food ordered, the amount should be minus from existing wallet amount
-          and display it to the customer (total price,wallet amount before deduction and after deduction) and get the confirmation from 
-          the Customer and store the order detail in order table and changed wallet amount in to customer table).
+         (Once after calculating the total price for the food ordered, the amount should be minus from existing wallet amount and display it to the customer (total price,wallet amount before deduction and after deduction) and get the confirmation from the Customer and store the order detail in order table and changed wallet amount in to customer table).
      * Deduction and Addition of Wallet amount depends on food ordered and cancelled.
      * Generate Random number and display as token number and should be stored in DB.
-     * Vendor should accept or cancel the order based on specific reason and if it cancelled, the wallet amount should be revert back
-       to the table in the DB and display the reverted amount (not the wallet balance)
+     * Vendor should accept or cancel the order based on specific reason and if it cancelled, the wallet amount should be revert back  to the table in the DB and display the reverted amount (not the wallet balance)
+     * On first order by the customer generate the Coupon code (FREE2020) and store it in database table, this coupon is valid only for 10 days from the date of first order
+        * Customer can use this coupon(worth INR 100) only once in the given period
+        * Coupon is generated only for the first order     
+
 # Nice-To-Have
   * Photos of the food items in the menu.
   * Multiple Vendors with their specialization (North Indian, South Indian, Veg, Non veg, etc..).
@@ -73,8 +74,9 @@ The skeletal application contains a simple screen with list of food items (Menu)
   * Adding/Editing Menu details
   * Feeding money to wallet through various mode such as Net Banking/Credit/Debit cards etc.
   * Cancellation of food ordered by customer.
-  * Customer can order different vendor will create a single order and internally it should create multiple orders for each product and vendor.
-  * Partial acceptance and deny of the order.
+  * Customer can order different vendor will create a single order and internally it should create multiple orders for each product and vendor
+  * Partial acceptance and deny of the order
+  * Generate random coupon code on first order
 
       
 # Great-To-Have

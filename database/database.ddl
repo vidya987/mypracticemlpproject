@@ -1,8 +1,8 @@
 -- creating Database
-create database FTPXX;
+create database MLPXX;
 
 -- using the Database
-use FTPXX;
+use MLPXX;
 
 -- Creating Menu table 
 CREATE TABLE MENU(FOOD_ID INT PRIMARY KEY)

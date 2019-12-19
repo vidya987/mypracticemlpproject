@@ -1,11 +1,11 @@
-package com.hexaware.FTPXX.util;
+package com.hexaware.MLPXX.util;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import com.hexaware.FTPXX.model.Menu;
-import com.hexaware.FTPXX.factory.MenuFactory;
+import com.hexaware.MLPXX.model.Menu;
+import com.hexaware.MLPXX.factory.MenuFactory;
 
 /**
  * This class provides a REST interface for the employee entity.

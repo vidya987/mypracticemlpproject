@@ -7,7 +7,7 @@ export class MenuServiceService {
 
   constructor(private httpClient: HttpClient) { }
   getMenu() : Observable<Menu[]> {
-    let url = "http://localhost:8080/FTPXX/api/menu"
+    let url = "http://localhost:8080/MLPXX/api/menu"
     return this.httpClient.get<Menu[]>(url);
   }
 }

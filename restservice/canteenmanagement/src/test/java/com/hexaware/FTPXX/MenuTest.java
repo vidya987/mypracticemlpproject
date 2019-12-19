@@ -1,7 +1,7 @@
-package com.hexaware.FTPXX.model;
+package com.hexaware.MLPXX.model;
 
-import com.hexaware.FTPXX.persistence.MenuDAO;
-import com.hexaware.FTPXX.factory.MenuFactory;
+import com.hexaware.MLPXX.persistence.MenuDAO;
+import com.hexaware.MLPXX.factory.MenuFactory;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 

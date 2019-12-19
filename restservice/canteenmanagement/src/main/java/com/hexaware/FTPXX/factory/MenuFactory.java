@@ -1,10 +1,10 @@
-package com.hexaware.FTPXX.factory;
+package com.hexaware.MLPXX.factory;
 
-import com.hexaware.FTPXX.persistence.MenuDAO;
-import com.hexaware.FTPXX.persistence.DbConnection;
+import com.hexaware.MLPXX.persistence.MenuDAO;
+import com.hexaware.MLPXX.persistence.DbConnection;
 import java.util.List;
 
-import com.hexaware.FTPXX.model.Menu;
+import com.hexaware.MLPXX.model.Menu;
 /**
  * MenuFactory class used to fetch menu data from database.
  * @author hexware

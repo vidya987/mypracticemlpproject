@@ -5,7 +5,7 @@
   <artifactId>ftp97-integration-tests</artifactId>
   <packaging>jar</packaging>
   <version>1.0</version>
-  <name>ftpxx-integration-tests</name>
+  <name>MLPXX-integration-tests</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>

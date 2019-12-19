@@ -1,7 +1,7 @@
-package com.hexaware.FTPXX.util;
+package com.hexaware.MLPXX.util;
 import java.util.Scanner;
-import com.hexaware.FTPXX.factory.MenuFactory;
-import com.hexaware.FTPXX.model.Menu;
+import com.hexaware.MLPXX.factory.MenuFactory;
+import com.hexaware.MLPXX.model.Menu;
 /**
  * CliMain used as Client interface for java coading.
  * @author hexware

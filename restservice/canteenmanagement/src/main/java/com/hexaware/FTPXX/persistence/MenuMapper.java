@@ -1,9 +1,9 @@
-package com.hexaware.FTPXX.persistence;
+package com.hexaware.MLPXX.persistence;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.hexaware.FTPXX.model.Menu;
+import com.hexaware.MLPXX.model.Menu;
 
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 import org.skife.jdbi.v2.StatementContext;

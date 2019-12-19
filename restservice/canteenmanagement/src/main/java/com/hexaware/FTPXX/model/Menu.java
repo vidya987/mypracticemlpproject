@@ -1,4 +1,4 @@
-package com.hexaware.FTPXX.model;
+package com.hexaware.MLPXX.model;
 import java.util.Objects;
 
 /**
