@@ -1,1 +1,0 @@
-This directory contains the mobile user interface to connect CMS api 

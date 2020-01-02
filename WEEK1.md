@@ -139,11 +139,11 @@
     * Step 9: Add the following lines to the file, where the value for User is the SSH key ID you copied earlier, and the value for 
     [User shift+ p to copy the following lines in vi editor]
     ```
-Host git-codecommit.*.amazonaws.com
-User APKAEIBAERJR2EXAMPLE   [user i(insertmode)to edit the user id]
-IdentityFile ~/.ssh/id_rsa
+    * Host git-codecommit.*.amazonaws.com
+    * User APKAEIBAERJR2EXAMPLE   [user i(insertmode)to edit the user id]
+    * IdentityFile ~/.ssh/id_rsa
     ```
-      * Use :wq to save the file 
+    * Use :wq to save the file 
       
     * Step 10: Run the following command to test your SSH configuration:
      * `ssh git-codecommit.us-east-2.amazonaws.com`
