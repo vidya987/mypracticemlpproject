@@ -1,8 +1,8 @@
 -- creating Database
-create database MLPXX;
+create database MLP194;
 
 -- using the Database
-use MLPXX;
+use MLP194;
 
 -- Creating Menu table 
 CREATE TABLE MENU(FOOD_ID INT PRIMARY KEY)

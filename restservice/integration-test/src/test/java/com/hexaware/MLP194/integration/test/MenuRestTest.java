@@ -1,4 +1,4 @@
-package com.hexaware.MLPXX.integration.test;
+package com.hexaware.MLP194.integration.test;
 
 import java.util.Arrays;
 import java.util.Date;

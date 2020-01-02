@@ -1,4 +1,4 @@
-package com.hexaware.MLPXX.persistence;
+package com.hexaware.MLP194.persistence;
 
 import org.skife.jdbi.v2.DBI;
 
@@ -16,7 +16,7 @@ public class DbConnection {
       if (dbc == null || dbc.equals("")) {
         dbc = "localhost:3306";
       }
-      DBI dbi = new DBI("jdbc:mysql://" + dbc + "/MLPXX?useSSL=false", "MLPXX", "MLPXX");
+      DBI dbi = new DBI("jdbc:mysql://" + dbc + "/MLP194?useSSL=false", "MLP194", "MLP194");
       return dbi;
     } catch (ClassNotFoundException e) {
       throw new RuntimeException(e);
