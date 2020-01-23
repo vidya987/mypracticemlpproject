@@ -28,8 +28,8 @@ The objective of week #2 is to get the cli working with showing menu details - f
   * Database Design
      * Edit Database.ddl for the tables: MENU,ORDER,CUSTOMER and VENDOR
         * Use the "STANDARDS_AND_GUIDELINES.md" file for the naming conventions to be followed.
-     * Edit Database.dml to insert data into the MENU,CUSTOMER,VENDOR table; The ORDER table can be blank to start with.
-     * Run the ddls and dmls against your local mysql server
+     * Edit
+     * Run the ddls and dmls against your local mysql server Database.dml to insert data into the MENU,CUSTOMER,VENDOR table; The ORDER table can be blank to start with.
      * Push the changes to remote branch
      * Now, the other team members can pull from branch and run the ddl/dml against their local databases
      * Follow the process for completing the review. and merging & cleanup
