@@ -3,13 +3,9 @@ use MLP194;
 
 
 
-insert into MENU values(101);
 
-insert into MENU values(102);
-
-insert into MENU values(103);
-
-insert into MENU values(104);
-
-insert into MENU values(105);
+    insert into  CUSTOMER values(1,1221,960034099,'Rose street,OMR',100),(2,1222,948662796,'Rajiv street,Siruseri',101);
+    insert into WALLET values(6,1221,1),(7,1222,2);
+    insert into MENU values(10001,'Dosa',45,'Plain Dosa'),(10004,'Idli',20,'Idli with sambar');
+    insert into  VENDOR values('Chef','available',5000),('Waiter','unavailable',5100);
 
