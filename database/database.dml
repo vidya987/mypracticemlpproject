@@ -3,9 +3,12 @@ use MLP194;
 
 
 
-
+--inserting values into CUSTOMER table
     insert into  CUSTOMER values(1,1221,960034099,'Rose street,OMR',100),(2,1222,948662796,'Rajiv street,Siruseri',101);
-    insert into WALLET values(6,1221,1),(7,1222,2);
+--inserting values into WALLET table
+	insert into WALLET values(6,1221,1),(7,1222,2);
+--inserting values into MENU table	
     insert into MENU values(10001,'Dosa',45,'Plain Dosa'),(10004,'Idli',20,'Idli with sambar');
+--inserting values into VENDOR table	
     insert into  VENDOR values('Chef','available',5000),('Waiter','unavailable',5100);
 
