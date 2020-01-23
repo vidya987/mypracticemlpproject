@@ -19,7 +19,7 @@ foreign key (CUS_ID) references CUSTOMER(CUS_ID));
 create table MENU(ITM_ID int not null primary key,ITM_NAME varchar(50),PRICE int, PRI_DES varchar(60));
 
 -- Creating VENDOR table
-create table VENDOR(SPL varchar(30),STATUS varchar(50) not null,VDR_ID int not null primary key);
+ create table VENDOR(SPL varchar(30),STATUS varchar(50) not null,VDR_ID int not null primary key);
 
 -- Creating Orders table
 CREATE TABLE ORDERS (
