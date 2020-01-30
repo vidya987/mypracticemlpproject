@@ -46,11 +46,14 @@ class CliMain {
  */
   private void showFullMenu() {
     Menu[] menu = MenuFactory.showMenu();
-    System.out.println("Menu_Id");
+    System.out.println("Menu_Id"+"\t"+"Menu_name");
+
     for (Menu m : menu) {
-      System.out.println(m.getFoodId());
+      System.out.println(m.ITM_ID+"\t"+m.ITM_NAME);
+ 
     }
   }
+
 /**
  * main method  is the basic entry point for the application.
  * @param args used to get the user input.
