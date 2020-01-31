@@ -7,6 +7,8 @@ import com.hexaware.MLP194.model.Menu;
  * @author hexware
  */
 class CliMain {
+  private int itmId;
+  private String itmName;
   private Scanner option = new Scanner(System.in, "UTF-8");
 /**
  * mainMenu method  used to display the option we had in the application.
@@ -46,10 +48,10 @@ class CliMain {
  */
   private void showFullMenu() {
     Menu[] menu = MenuFactory.showMenu();
-    System.out.println("Menu_Id"+"\t"+"Menu_name");
+    System.out.println("Menu_Id" + "\t" + "Menu_name");
 
     for (Menu m : menu) {
-      System.out.println(m.ITM_ID+"\t"+m.ITM_NAME);
+      System.out.println(m.itmId + "\t" + m.itmName);
  
     }
   }
@@ -61,5 +63,31 @@ class CliMain {
   public static void main(final String[] args) {
     final CliMain mainObj = new CliMain();
     mainObj.mainMenu();
+  }
+
+  public int getItmId() {
+    return itmId;
+  }
+  /** 
+   * @param itmId to set id
+   */
+  public void setItmId(final int itmId) {
+    this.itmId = itmId;
+  }
+
+  public String getItmName() {
+    return itmName;
+  }
+
+  public void setItmName(String itmName) {
+    this.itmName = itmName;
+  }
+
+  public Scanner getOption() {
+    return option;
+  }
+
+  public void setOption(Scanner option) {
+    this.option = option;
   }
 }

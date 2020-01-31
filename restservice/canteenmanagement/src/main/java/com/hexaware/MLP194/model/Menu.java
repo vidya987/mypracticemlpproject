@@ -6,11 +6,8 @@ import java.util.Objects;
  * @author hexware
  */
 public class Menu {
-/**
- * foodId to store foodId.
- */
-  public int ITM_ID;
-  public String ITM_NAME;
+  private int itmId;
+  private String itmName;
   /**
    * Default Constructor.
    */
@@ -20,15 +17,13 @@ public class Menu {
 /**
  * @param argFoodId to initialize food id.
  * used to get details through constructor.
+ * @param argFoodname to initialize food id.
+ * used to get details through constructor.
  */
-  public Menu(final int argFoodId,final String argFoodname) {
-    this.ITM_ID = argFoodId;
-     this.ITM_NAME= argFoodname;
+  public Menu(final int argFoodId, final String argFoodname) {
+    this.itmId = argFoodId;
+    this.itmName = argFoodname;
   }
- 
-
-
-
   @Override
     public final boolean equals(final Object obj) {
     if (obj == null) {
@@ -38,42 +33,40 @@ public class Menu {
       return false;
     }
     Menu menu = (Menu) obj;
-    if (Objects.equals(ITM_ID, menu.ITM_ID) || Objects.equals(ITM_NAME, menu.ITM_NAME)) 
-    {
+    if (Objects.equals(itmId, menu.itmId) || Objects.equals(itmName, menu.itmName))     {
       return true;
     }
     return false;
   }
   @Override
     public final int hashCode() {
-    return Objects.hash(ITM_ID);
+    return Objects.hash(itmId, itmName);
   }
-
-  @Override
-  public final String hashCode() {
-  return Objects.hash(ITM_NAME);
-}
-
-
     /**
      * @return this food ID.
      */
   public final int getFoodId() {
-    return ITM_ID;
+    return itmId;
   }
+  /**
+     * @return this foodname.
+     */
   public final String getFoodname() {
-    return ITM_NAME;
+    return itmName;
   }
 
     /**
      * @param argFoodId gets the food id.
      */
   public final void setFoodId(final int argFoodId) {
-    this.ITM_ID = argFoodId;
+    this.itmId = argFoodId;
   }
 
-    public final void setFoodname(final String argFoodname) 
-    {
-      this.ITM_NAME = argFoodname;
+ /**
+     * @param argFoodname gets the foodname.
+     */
+  public final void setFoodname(final String argFoodname) {
+    this.itmName = argFoodname;
   }
 }
+

@@ -2,6 +2,8 @@ package com.hexaware.MLP194.model;
 
 import com.hexaware.MLP194.persistence.MenuDAO;
 import com.hexaware.MLP194.factory.MenuFactory;
+//import com.hexaware.MLP194.model.Menu;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
@@ -33,18 +35,18 @@ public class MenuTest {
    */
   @Test
   public final void testMenu() {
-    Menu m = new Menu();
-    Menu m100 = new Menu(100);
-    Menu m101 = new Menu(101);
+
+    Menu m100 = new Menu(100, null);
+    Menu m101 = new Menu(101, null);
     assertNotEquals(m100, null);
     assertNotEquals(m101, null);
     assertEquals(m100.getFoodId(),
-        new Menu(100).getFoodId());
+        new Menu(100, null).getFoodId());
     m101.setFoodId(100);
-    assertNotEquals(m101, new Menu(101));
+    assertNotEquals(m101, new Menu(101, null));
     assertEquals(m100.hashCode(),
-        new Menu(100).hashCode());
-    assertEquals(m100, new Menu(100));
+        new Menu().hashCode());
+    assertEquals(m100, new Menu(100, null));
   }
   /**
    * tests that empty employee list is handled correctly.
@@ -72,8 +74,8 @@ public class MenuTest {
    */
   @Test
   public final void testListAllSome(@Mocked final MenuDAO dao) {
-    final Menu m100 = new Menu(100);
-    final Menu m101 = new Menu(101);
+    final Menu m100 = new Menu(100, null);
+    final Menu m101 = new Menu(101, null);
     final ArrayList<Menu> mn = new ArrayList<Menu>();
     new Expectations() {
       {
@@ -90,9 +92,9 @@ public class MenuTest {
     };
     Menu[] mn1 = MenuFactory.showMenu();
     assertEquals(2, mn1.length);
-    assertEquals(new Menu(100).getFoodId(),
+    assertEquals(new Menu(100, null).getFoodId(),
         mn1[0].getFoodId());
-    assertEquals(new Menu(101).getFoodId(),
+    assertEquals(new Menu(101, null).getFoodId(),
         mn1[1].getFoodId());
   }
 }

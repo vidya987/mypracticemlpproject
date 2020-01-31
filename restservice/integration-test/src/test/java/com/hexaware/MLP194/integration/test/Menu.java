@@ -1,6 +1,6 @@
 package com.hexaware.MLP194.integration.test;
 import java.util.Objects;
-import com.hexaware.MLP194.integration.test.CommonUtil;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
@@ -116,14 +116,17 @@ public final int hashCode() {
     this.vendorId = argVendorId;
   }
 
-  public String toString() {
-      try {
-        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
-        return ow.writeValueAsString(this);
-      } catch(Exception e) {
-        throw new RuntimeException(e);
-      }
+  /**
+   *  @return  toString.
+   */
+  public String toString()  {
+    try {
+      ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+      return ow.writeValueAsString(this);
+    } catch (Exception e) {
+      throw new RuntimeException(e);
     }
+  }
 
 }
 

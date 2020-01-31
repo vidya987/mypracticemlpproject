@@ -11,4 +11,4 @@ use MLP194;
     insert into MENU values(10001,'Dosa',45,'Plain Dosa'),(10004,'Idli',20,'Idli with sambar'),(10005,'Pongal',30,'Pongal flavoured with ghee'),(10003,'Poori',45,'Poori with channa masala'),(10002,'Chapathi',20,' Variety falvoured Chapathi ');
 --inserting values into VENDOR table	
     insert into  VENDOR values('Chef','available',5000),('Waiter','unavailable',5100),('Cleaner','available',5500),('Vessel Cleaner','available',5600);
-
+    
