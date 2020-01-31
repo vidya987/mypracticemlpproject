@@ -1,60 +1,95 @@
 package com.hexaware.MLP194.model;
+/**
+ * Wallet class used to display wallet information.
+ * @author hexware
+ */
+class Wallet {
+  private int wltPt;
+  private int wltNo;
+  private int cusId;
 
-class Wallet
-{
-    int WLT_PT;
-    int WLT_NO;
-    int CUS_ID;
-    public Wallet() {
+   /**
+   * Default Constructor.
+   */
+  Wallet() {
+  }
+/**
+   * @param argwltPt to initialise wallet point
+   * @param argwltNo to initialise wallet number
+   * @param argcusId to initialise customer id
+   */
+  Wallet(final int argwltPt, final int argwltNo, final int argcusId) {
+    this.wltPt = argwltPt;
+    this.wltNo = argwltNo;
+    this.cusId = argcusId;
+  }
+  @Override
+    public final int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + wltPt;
+    result = prime * result + wltNo;
+    result = prime * result + cusId;
+    return result;
+  }
+  @Override
+  public final boolean equals(final Object obj) {
+    if (this == obj) {
+      return true;
     }
-    public Wallet(int wLT_PT, int wLT_NO, int cUS_ID) {
-		WLT_PT = wLT_PT;
-		WLT_NO = wLT_NO;
-		CUS_ID = cUS_ID;
-	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + CUS_ID;
-		result = prime * result + WLT_NO;
-		result = prime * result + WLT_PT;
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Wallet other = (Wallet) obj;
-		if (CUS_ID != other.CUS_ID)
-			return false;
-		if (WLT_NO != other.WLT_NO)
-			return false;
-		if (WLT_PT != other.WLT_PT)
-			return false;
-		return true;
-	}
-	public int getWLT_PT() {
-		return WLT_PT;
-	}
-	public void setWLT_PT(int wLT_PT) {
-		WLT_PT = wLT_PT;
-	}
-	public int getWLT_NO() {
-		return WLT_NO;
-	}
-	public void setWLT_NO(int wLT_NO) {
-		WLT_NO = wLT_NO;
-	}
-	public int getCUS_ID() {
-		return CUS_ID;
-	}
-	public void setCUS_ID(int cUS_ID) {
-		CUS_ID = cUS_ID;
-	}
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    Wallet other = (Wallet) obj;
+    if (cusId != other.wltPt) {
+      return false;
+    }
+    if (wltNo != other.wltNo) {
+      return false;
+    }
+    if (wltPt != other.cusId) {
+      return false;
+    }
+    return true;
+  }
+/**
+* @return to get the wallet point
+*/
+  public final int getwltPt() {
+    return wltPt;
+  }
+  /**
+   * @param argwltPt to set the wallet point.
+   */
+  public final  void setwltPt(final int argwltPt) {
+    wltPt = argwltPt;
+  }
+ /**
+  * @return to get wallet number.
+  */
+  public final int getwltNo() {
+    return wltNo;
+  }
+ /**
+  * @param argwltNo to set the wallet number.
+  */
+  public final void setargwltNo(final int argwltNo) {
+    wltNo = argwltNo;
+  }
+  /**
+   * @return to get customer id.
+   */
+  public final int getcusId() {
+    return cusId;
+  }
+  /**
+   * @param argcusId to set the customer id.
+   */
+  public final void setcusId(final int argcusId) {
+    cusId = argcusId;
+  }
 
 }

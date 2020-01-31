@@ -1,6 +1,6 @@
 package com.hexaware.MLP194.model;
 /**
- * Menu class used to display menu information.
+ * Customer class used to display customer information.
  * @author hexware
  */
 class Customer {
@@ -89,7 +89,7 @@ class Customer {
     this.addRess = argaddRess;
   }
   /**
-   * @return the care number.
+   * @return the card number.
    */
 
   public final int getcrdNo() {
