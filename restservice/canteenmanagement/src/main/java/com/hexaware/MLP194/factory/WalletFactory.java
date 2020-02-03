@@ -28,7 +28,7 @@ public class WalletFactory {
   }
   /**
    * Call the data base connection.
-   * @return the array of menu object.
+   * @return the array of wallet object.
    */
   public static Wallet[] showMenu() {
     List<Wallet> wallets = dao().show();

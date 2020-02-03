@@ -3,7 +3,7 @@ package main.java.com.hexaware.MLP194.model;
  * Order class used to display wallet information.
  * @author hexware
  */
-public class Order{
+public class Orders{
     private int ordId; 
     private String status; 
     private int cusId;

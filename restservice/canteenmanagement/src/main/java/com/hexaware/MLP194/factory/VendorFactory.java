@@ -1,34 +1,35 @@
 package com.hexaware.MLP194.factory;
-import com.hexaware.MLP194.persistence.CustomerDAO;
+import com.hexaware.MLP194.persistence.VendorDAO;
 import com.hexaware.MLP194.persistence.DbConnection;
 import java.util.List;
-
-import com.hexaware.MLP194.model.Customer;
+import com.hexaware.MLP194.model.Vendor;
 /**
  * MenuFactory class used to fetch menu data from database.
  * @author hexware
  */
-public class CustomerFactory {
+public class VendorFactory {
   /**
    *  Protected constructor.
    */
-  protected CustomerFactory() {
+  protected VendorFactory() {
 
   }
   /**
    * Call the data base connection.
    * @return the connection object.
    */
-  private static CustomerDAO dao() {
+  private static VendorDAO dao() {
     DbConnection db = new DbConnection();
-    return db.getConnect().onDemand(CustomerDAO.class);
+    return db.getConnect().onDemand(VendorDAO.class);
   }
   /**
    * Call the data base connection.
-   * @return the array of customer object.
+   * @return the array of vendor object.
    */
-  public static Customer[] showMenu() {
-    List<Customer> m = dao().show();
-    return m.toArray(new Customer[m.size()]);
+  public static Vendor[] showMenu() {
+    List<Vendor> k = dao().show();
+    return k.toArray(new Vendor[k.size()]);
   }
 }
+
+

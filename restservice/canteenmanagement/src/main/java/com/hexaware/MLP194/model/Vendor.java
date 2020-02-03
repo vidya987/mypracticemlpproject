@@ -2,7 +2,7 @@ package com.hexaware.MLP194.model;
 /**
  * Vendor class to display vendor information.
  */
-class Vendor {
+public class Vendor {
   private int vdrId;
   private String status;
   private String spl;
@@ -42,8 +42,10 @@ class Vendor {
   public final void setSpl(final String argspl) {
     spl = argspl;
   }
-  @Override
-public int hashCode() {
+/**
+ * @return returns the result of hashcode.
+ */
+  public int hashCode() {
     final int prime = 31;
     int result = 1;
     //result = prime * result + ((spl == null) ? 0 : spl.hashCode());
@@ -87,7 +89,7 @@ public final boolean equals(final Object obj) {
    * @param argstatus to initialise vendor status.
    * @param argspl to initialise vendor specialisation.
    */
-  Vendor(final int argvdrId, final  String argstatus, final String argspl) {
+  public Vendor(final int argvdrId, final  String argstatus, final String argspl) {
     this.vdrId = argvdrId;
     this.status = argstatus;
     this.spl = argspl;

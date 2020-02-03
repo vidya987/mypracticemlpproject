@@ -5,10 +5,7 @@ import java.net.URISyntaxException;
 /**
  *@author hexaware
  */
-/**
- * 
- */
-class CommonUtil {
+public class CommonUtil {
   public static final String hostId;
   public static final String portId;
   public static final String webApp; 

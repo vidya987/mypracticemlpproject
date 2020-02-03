@@ -14,7 +14,7 @@ public interface WalletDAO {
   /**
    * @return the all the Wallet record.
   */
-    @SqlQuery("Select * from Wallet")
+  @SqlQuery("Select * from Wallet")
     @Mapper(WalletMapper.class)
     List<Wallet> show();
 }
