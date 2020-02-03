@@ -1,4 +1,4 @@
-package main.java.com.hexaware.MLP194.persistence;
+package com.hexaware.MLP194.persistence;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public interface OrdersDAO {
   /**
    * @return the all the Wallet record.
   */
-    @SqlQuery("Select * from Orders")
+  @SqlQuery("Select * from Orders")
     @Mapper(OrdersMapper.class)
     List<Orders> show();
 }

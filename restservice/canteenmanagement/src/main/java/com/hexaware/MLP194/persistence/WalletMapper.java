@@ -19,11 +19,10 @@ public class WalletMapper implements ResultSetMapper<Wallet> {
      * @return the mapped customer object
      * @throws SQLException in case there is an error in fetching data from the resultset
      */
-  
   public final Wallet map(final int idx, final ResultSet rs, final StatementContext ctx) throws SQLException {
       /**
        * @return Wallet
        */
-    return new Wallet(rs.getInt("wltPt"), rs.getInt("wltNo"), rs.getInt("cusId"));
+    return new Wallet(rs.getInt("WLT_PT"), rs.getInt("WLT_NO"), rs.getInt("CUS_ID"));
   }
 }

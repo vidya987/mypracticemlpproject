@@ -1,9 +1,11 @@
-package main.java.com.hexaware.MLP194.factory;
-import com.hexaware.MLP194.persistence.OrderDAO;
-import com.hexaware.MLP194.persistence.DbConnection;
+package com.hexaware.MLP194.factory;
+
 import java.util.List;
 
-import com.hexaware.MLP194.model.Order;
+import com.hexaware.MLP194.persistence.DbConnection;
+import com.hexaware.MLP194.persistence.OrdersDAO;
+
+import com.hexaware.MLP194.model.Orders;
 
 
 /**
