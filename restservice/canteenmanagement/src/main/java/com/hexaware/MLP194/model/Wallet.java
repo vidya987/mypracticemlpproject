@@ -3,7 +3,7 @@ package com.hexaware.MLP194.model;
  * Wallet class used to display wallet information.
  * @author hexware
  */
-class Wallet {
+public class Wallet {
   private int wltPt;
   private int wltNo;
   private int cusId;
@@ -11,14 +11,14 @@ class Wallet {
    /**
    * Default Constructor.
    */
-  Wallet() {
+  public Wallet() {
   }
 /**
    * @param argwltPt to initialise wallet point
    * @param argwltNo to initialise wallet number
    * @param argcusId to initialise customer id
    */
-  Wallet(final int argwltPt, final int argwltNo, final int argcusId) {
+    public Wallet(final int argwltPt, final int argwltNo, final int argcusId) {
     this.wltPt = argwltPt;
     this.wltNo = argwltNo;
     this.cusId = argcusId;
