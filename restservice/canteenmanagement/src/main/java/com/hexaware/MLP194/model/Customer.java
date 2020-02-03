@@ -3,7 +3,7 @@ package com.hexaware.MLP194.model;
  * Customer class used to display customer information.
  * @author hexware
  */
-class Customer {
+public class Customer {
 /**
  * cusId to store customer id.
  * walNo to store wallet number.
@@ -31,7 +31,7 @@ class Customer {
  * @param argcrdNo to initialise customer id
  */
 
-  Customer(final int argcusId, final int argwalNo, final int argphnNo, final String argaddRess, final int argcrdNo) {
+  public Customer(final int argcusId, final int argwalNo, final int argphnNo, final String argaddRess, final int argcrdNo) {
     this.cusId = argcusId;
     this.walNo = argwalNo;
     this.phnNo = argphnNo;

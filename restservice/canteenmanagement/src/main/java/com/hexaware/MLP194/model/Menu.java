@@ -45,13 +45,13 @@ public class Menu {
     /**
      * @return this food ID.
      */
-  public final int getFoodId() {
+  public final int getitmId() {
     return itmId;
   }
   /**
      * @return this foodname.
      */
-  public final String getFoodname() {
+  public final String getitmName() {
     return itmName;
   }
 

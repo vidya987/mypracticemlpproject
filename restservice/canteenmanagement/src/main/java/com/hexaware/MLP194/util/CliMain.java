@@ -48,11 +48,10 @@ class CliMain {
  */
   private void showFullMenu() {
     Menu[] menu = MenuFactory.showMenu();
-    System.out.println("Menu_Id" + "\t" + "Menu_name");
+    System.out.println("itmId" + "\t" + "itmName");
 
     for (Menu m : menu) {
-      System.out.println(m.itmId + "\t" + m.itmName);
- 
+      System.out.println(m.getitmId() + "\t" + m.getitmName());
     }
   }
 
@@ -64,30 +63,41 @@ class CliMain {
     final CliMain mainObj = new CliMain();
     mainObj.mainMenu();
   }
+  /**
+   * @return to get item id.
+   */
 
   public int getItmId() {
     return itmId;
   }
-  /** 
-   * @param itmId to set id
+  /**
+   * @param argitmId to set id
    */
-  public void setItmId(final int itmId) {
-    this.itmId = itmId;
+  public void setItmId(final int argitmId) {
+    this.itmId = argitmId;
   }
-
+  /**
+   * @return to get item name.
+   */
   public String getItmName() {
     return itmName;
   }
-
-  public void setItmName(String itmName) {
-    this.itmName = itmName;
+  /**
+   * @param argitmName to set item name.
+   */
+  public final void setItmName(final String argitmName) {
+    this.itmName = argitmName;
   }
-
+  /**
+   * @return get the options.
+   */
   public Scanner getOption() {
     return option;
   }
-
-  public void setOption(Scanner option) {
-    this.option = option;
+  /**
+   * @param argoption to set options.
+   */
+  public void setOption(final Scanner argoption) {
+    this.option = argoption;
   }
 }

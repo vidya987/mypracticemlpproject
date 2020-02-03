@@ -8,48 +8,48 @@ package com.hexaware.MLP194.integration.test;
 import java.net.URISyntaxException;
 //import java.text.SimpleDateFormat;
 import org.junit.Test;
-import static org.junit.Assert.*;
+//import static org.junit.Assert;
 
 import com.jayway.restassured.http.ContentType;
 //import com.jayway.restassured.path.json.JsonPath;
 import static com.jayway.restassured.RestAssured.given;
-
+import static org.junit.Assert.assertEquals;
 /**
  * to declare a class MenuRestTest
  */
 public class MenuRestTest {
+/**
+* @throws AssertionError
+* @throws URISyntaxException
+*/
 
   @Test
-	public void testMenuList() throws AssertionError, URISyntaxException {
-	
-
-	Menu[] res = given().when().accept(ContentType.JSON)
-		.get(CommonUtil.getURI("/api/menu")).getBody().as(Menu[].class);
-	assertEquals(5,m.length);
-	assertEquals(101, res[0].getFoodId());
-	assertEquals("Dosa", res[0].getMenuName());
-	assertEquals(80, res[0].getPrice(), 0.1);
-	assertEquals(1001, res[0].getVendorId());
+public void testMenuList() throws AssertionError, URISyntaxException {
+    Menu[] res = given().when().accept(ContentType.JSON).get(CommonUtil.getURI("/api/menu")).getBody().as(Menu[].class);
+    assertEquals(5, m.length);
+    assertEquals(101, res[0].getFoodId());
+    assertEquals("Dosa", res[0].getMenuName());
+    assertEquals(80, res[0].getPrice(), 0.1);
+    assertEquals(1001, res[0].getVendorId());
+  }
+  /**
+   * @throws AssertionError
+   * @throws URISyntaxException
+   */
+  @Test
+public void testFoodDetails() throws AssertionError, URISyntaxException {
+    Menu m = given().accept(ContentType.JSON).when().get(CommonUtil.getURI("/api/menu/FoodDetails/101")).getBody().as(Menu.class);
+    assertEquals(101, m.getFoodId());
+    assertEquals("Dosa", m.getMenuName());
+    assertEquals(80, m.getPrice(), 0.1);
+    assertEquals(1001, m.getVendorId());
+  }
+ /**
+* @throws AssertionError
+* @throws URISyntaxException
+*/
+  @Test
+public void testMenuById404() throws AssertionError, URISyntaxException {
+    given().accept(ContentType.JSON).when().get(CommonUtil.getURI("/api/menu/1010")).then().assertThat().statusCode(404);
 	}
-
-    @Test
-	public void testFoodDetails() throws AssertionError, URISyntaxException {
-	Menu m = given().
-                  accept(ContentType.JSON).
-				  when().
-                  get(CommonUtil.getURI("/api/menu/FoodDetails/101")).
-				  getBody().as(Menu.class);
-				  
-	assertEquals(101, m.getFoodId());
-	assertEquals("Dosa", m.getMenuName());
-	assertEquals(80, m.getPrice(), 0.1);
-	assertEquals(1001, m.getVendorId());
-	}
-
-	@Test
-	public void testMenuById404() throws AssertionError, URISyntaxException {
-		given().accept(ContentType.JSON).when()
-		.get(CommonUtil.getURI("/api/menu/1010")).then().assertThat().statusCode(404);
-	}
-	
 }
