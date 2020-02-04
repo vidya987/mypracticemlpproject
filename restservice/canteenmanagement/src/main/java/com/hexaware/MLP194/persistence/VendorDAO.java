@@ -1,7 +1,6 @@
 package com.hexaware.MLP194.persistence;
 
 import org.skife.jdbi.v2.sqlobject.Bind;
-import org.skife.jdbi.v2.sqlobject.BindBean;
 import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.customizers.Mapper;
@@ -18,18 +17,28 @@ public interface VendorDAO {
   @SqlQuery("Select * from Vendor")
     @Mapper(VendorMapper.class)
     List<Vendor> show();
-    @SqlUpdate("insert into Vendor(SPL,STATUS,VDR_ID)"+" VALUES (:spl,:status,:vdrId)")
-   // void insertBean(@BindBean Vendor users);
+    /**
+     * @param spl for specialisation.
+     * @param status for status.
+     * @param vdrId for vendor status.
+     * @return for vendor required details.
+     */
+  @SqlUpdate("insert into Vendor(SPL,STATUS,VDR_ID)" + " VALUES (:spl,:status,:vdrId)")
     int insertVendor(@Bind("spl") String spl, @Bind("status") String status, @Bind("vdrId") int vdrId);
+    /**
+     * @param vdrId for vendor id.
+     * @return to return deleted message
+     */
 
-    @SqlUpdate("delete from Vendor where VDR_ID= :vdrId")
+  @SqlUpdate("delete from Vendor where VDR_ID= :vdrId")
     int deleteVendor(@Bind("vdrId") int vdrId);
+    /**
+     * @param spl for specialisation.
+     * @param vdrId for vendor id.
+     * @return to return vendor updated details.
+     */
 
-    @SqlUpdate("Update Vendor set SPL = :spl where VDR_ID = :vdrId")
+  @SqlUpdate("Update Vendor set SPL = :spl where VDR_ID = :vdrId")
     int updateVendor(@Bind("spl") String spl, @Bind("vdrId") int vdrId);
-    
-
-
-
 
 }

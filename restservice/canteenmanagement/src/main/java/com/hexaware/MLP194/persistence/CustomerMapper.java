@@ -26,4 +26,3 @@ public class CustomerMapper implements ResultSetMapper<Customer> {
     return new Customer(rs.getInt("CUS_ID"), rs.getInt("WAL_NO"), rs.getInt("PHN_NO"), rs.getString("ADDRESS"), rs.getInt("CRD_NO"));
   }
 }
-
