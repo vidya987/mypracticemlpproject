@@ -19,17 +19,37 @@ public class VendorFactory {
    * @return the connection object.
    */
   private static VendorDAO dao() {
-    DbConnection db = new DbConnection();
+    final DbConnection db = new DbConnection();
     return db.getConnect().onDemand(VendorDAO.class);
   }
+
   /**
    * Call the data base connection.
+   * 
    * @return the array of vendor object.
    */
   public static Vendor[] showMenu() {
-    List<Vendor> k = dao().show();
+    final List<Vendor> k = dao().show();
     return k.toArray(new Vendor[k.size()]);
   }
+
+  public static int insertingVendor(final String spl, final String status, final int vdrId) {
+    final int i = dao().insertVendor(spl, status, vdrId);
+    return i;
+  }
+  public static int updatingVendor(final String spl, final int vdrId) {
+    int i = dao().updateVendor(spl, vdrId);
+    return i;
+  }
+  public static int deletingVendor(final int vdrId) {
+    int i = dao().deleteVendor(vdrId);
+    return i;
+  }
+  public static Vendor[] showVendor() {
+    List<Vendor> m = dao().show();
+    return m.toArray(new Vendor[m.size()]);
+  }
+
 }
 
 
