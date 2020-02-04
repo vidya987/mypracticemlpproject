@@ -1,9 +1,7 @@
 package com.hexaware.MLP194.persistence;
 
 import java.util.List;
-
 import com.hexaware.MLP194.model.Orders;
-
 import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.customizers.Mapper;
 /**
@@ -17,4 +15,5 @@ public interface OrdersDAO {
   @SqlQuery("Select * from Orders")
     @Mapper(OrdersMapper.class)
     List<Orders> show();
+
 }

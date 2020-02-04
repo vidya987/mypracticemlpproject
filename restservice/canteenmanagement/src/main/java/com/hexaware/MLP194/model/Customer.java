@@ -16,13 +16,6 @@ public class Customer {
   private int phnNo;
   private String addRess;
   private int crdNo;
-
-  /**
-   * Default Constructor.
-   */
-
-  Customer() { }
-
 /**
  * @param argcusId to initialise customer id.
  * @param argwalNo to initialise customer id
@@ -38,7 +31,6 @@ public class Customer {
     this.addRess = argaddRess;
     this.crdNo = argcrdNo;
   }
-
 /**
  * @return to get customer id
  */
@@ -148,5 +140,4 @@ public final boolean equals(final Object obj) {
     }
     return true;
   }
-
 }
