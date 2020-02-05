@@ -7,7 +7,7 @@ use MLP194;
 
 -- Creating Customer table
 create table CUSTOMER(CUS_ID int(5) primary key,WAL_NO int(10),
-PHN_NO int(10),ADDRESS varchar(30),CRD_NO int(10));
+PHN_NO int(10),ADDRESS varchar(30),CRD_NO int(10),PSWD varchar(20));
 
 
 -- Creating Wallet table
@@ -16,7 +16,7 @@ foreign key (CUS_ID) references CUSTOMER(CUS_ID));
 
 
 -- Creating Menu table
-create table MENU(ITM_ID int not null primary key,ITM_NAME varchar(50),PRICE int, PRI_DES varchar(60));
+create table MENU(ITM_ID int not null primary key,ITM_NAME varchar(50),PRICE int, PRI_DES varchar(60),QTY int(3));
 
 -- Creating VENDOR table
  create table VENDOR(SPL varchar(30),STATUS varchar(50) not null,VDR_ID int not null primary key);
