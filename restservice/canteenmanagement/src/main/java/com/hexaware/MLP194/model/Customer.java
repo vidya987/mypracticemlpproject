@@ -10,26 +10,30 @@ public class Customer {
  * crdNo to store card number.
  * addRess to store customer address.
  * phnNo to store phone number.
+ * pswd to store password.
  */
   private int cusId;
   private int walNo;
   private int phnNo;
   private String addRess;
   private int crdNo;
+  private String pswd;
 /**
  * @param argcusId to initialise customer id.
  * @param argwalNo to initialise customer id
  * @param argphnNo to initialise customer id
  * @param argaddRess to initialise customer id
  * @param argcrdNo to initialise customer id
+ * @param argpswd to initialise customer password
  */
 
-  public Customer(final int argcusId, final int argwalNo, final int argphnNo, final String argaddRess, final int argcrdNo) {
+  public Customer(final int argcusId, final int argwalNo, final int argphnNo, final String argaddRess, final int argcrdNo, final String argpswd) {
     this.cusId = argcusId;
     this.walNo = argwalNo;
     this.phnNo = argphnNo;
     this.addRess = argaddRess;
     this.crdNo = argcrdNo;
+    this.pswd = argpswd;
   }
 /**
  * @return to get customer id
@@ -94,6 +98,18 @@ public class Customer {
   public final  void setcrdNo(final int argcrdNo) {
     this.crdNo = argcrdNo;
   }
+  /**
+   * @return to return password.
+   */
+  public final  String getpswd() {
+    return pswd;
+  }
+  /**
+   * @param argpswd to set password.
+   */
+  public final void setpswd(final String argpswd) {
+    this.pswd = argpswd;
+  }
 
   @Override
 public final int hashCode() {
@@ -124,6 +140,13 @@ public final boolean equals(final Object obj) {
         return false;
       }
     } else if (!addRess.equals(other.addRess)) {
+      return false;
+    }
+    if (pswd == null) {
+      if (other.pswd != null) {
+        return false;
+      }
+    } else if (!pswd.equals(other.pswd)) {
       return false;
     }
     if (crdNo != other.crdNo) {

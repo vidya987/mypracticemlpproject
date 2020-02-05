@@ -6,6 +6,8 @@ public class Vendor {
   private int vdrId;
   private String status;
   private String spl;
+  private int phnNo;
+  private String pswd;
   /**
    * @return to get vendor id.
    */
@@ -42,6 +44,30 @@ public class Vendor {
   public final void setSpl(final String argspl) {
     spl = argspl;
   }
+  /**
+ * @return to get phone number
+ */
+  public final int getphnNo() {
+    return phnNo;
+  }
+/**
+* @param argphnNo to get phone number.
+*/
+  public final  void setphnNo(final int argphnNo) {
+    this.phnNo = argphnNo;
+  }
+   /**
+   * @return to return password.
+   */
+  public final  String getpswd() {
+    return pswd;
+  }
+  /**
+   * @param argpswd to set password.
+   */
+  public final void setpswd(final String argpswd) {
+    this.pswd = argpswd;
+  }
 /**
  * @return returns the result of hashcode.
  */
@@ -51,6 +77,7 @@ public class Vendor {
     //result = prime * result + ((spl == null) ? 0 : spl.hashCode());
     //result = prime * result + ((status == null) ? 0 : status.hashCode());
     result = prime * result + vdrId;
+    result = prime * result + phnNo;
     return result;
   }
   @Override
@@ -72,11 +99,21 @@ public final boolean equals(final Object obj) {
     } else if (!spl.equals(other.spl)) {
       return false;
     }
+    if (pswd == null) {
+      if (other.pswd != null) {
+        return false;
+      }
+    } else if (!pswd.equals(other.pswd)) {
+      return false;
+    }
     if (status == null) {
       if (other.status != null) {
         return false;
       }
     } else if (!status.equals(other.status)) {
+      return false;
+    }
+    if (phnNo != other.phnNo) {
       return false;
     }
     if (vdrId != other.vdrId) {
@@ -88,11 +125,15 @@ public final boolean equals(final Object obj) {
    * @param argvdrId to initialise vendor id.
    * @param argstatus to initialise vendor status.
    * @param argspl to initialise vendor specialisation.
+   * @param argphnNo to initialise vendor phone number.
+   * @param argpswd to initialise vendor password.
    */
-  public Vendor(final int argvdrId, final  String argstatus, final String argspl) {
+  public Vendor(final int argvdrId, final  String argstatus, final String argspl, final int argphnNo, final String argpswd) {
     this.vdrId = argvdrId;
     this.status = argstatus;
     this.spl = argspl;
+    this.phnNo = argphnNo;
+    this.pswd = argpswd;
   }
   /**
    * Default Constructor.

@@ -68,26 +68,34 @@ class CliMain {
   private void detailsTableCustomer() {
     try {
       System.out.println("change in Customer details? ");
-      System.out.println("1. add into Customer");
-      System.out.println("2. display customer");
-      System.out.println("3. Update customer");
-      System.out.println("4. Delete a customer");
-      System.out.println("5. Exit");
+      System.out.println("1. Sign Up");
+      System.out.println("2. Login");
+      System.out.println("3. add into Customer");
+      System.out.println("4. display customer");
+      System.out.println("5. Update customer");
+      System.out.println("6. Delete a customer");
+      System.out.println("7. Exit");
       final int tableOption = option.nextInt();
       switch (tableOption) {
         case 1:
-          addCustomers();
+          signUp();
           break;
         case 2:
-          showCustomer();
+          loginCustomer();
           break;
         case 3:
-          editCustomer();
+          addCustomers();
           break;
         case 4:
-          removeCustomer();
+          showCustomer();
           break;
         case 5:
+          editCustomer();
+          break;
+        case 6:
+          removeCustomer();
+          break;
+        case 7:
           Runtime.getRuntime().halt(0);
         default:
           System.out.println("Choose either 1 or 2 or 3 or 4");
@@ -102,26 +110,33 @@ class CliMain {
   private void detailsTableVendor() {
     try {
       System.out.println("change in Vendor details ? ");
-      System.out.println("1.add vendor details");
-      System.out.println("2.display vendor details");
-      System.out.println("3.update vendor details");
-      System.out.println("4.delete vendor details");
-      System.out.println("5. Exit");
+      System.out.println("1. Sign Up");
+      System.out.println("2. Login");
+      System.out.println("3.add vendor details");
+      System.out.println("4.display vendor details");
+      System.out.println("5.update vendor details");
+      System.out.println("6.delete vendor details");
+      System.out.println("7. Exit");
       final int tableOption = option.nextInt();
       switch (tableOption) {
         case 1:
-          addVendor();
+          signUpVendor();
           break;
         case 2:
-          displayVendor();
-          break;
+          loginVendor();
         case 3:
-          updateVendor();
+          addVendor();
           break;
         case 4:
-          deleteVendor();
+          displayVendor();
           break;
         case 5:
+          updateVendor();
+          break;
+        case 6:
+          deleteVendor();
+          break;
+        case 7:
           Runtime.getRuntime().halt(0);
         default:
           System.out.println("Choose either 1 or 2 or 3 or 4");
@@ -194,6 +209,42 @@ class CliMain {
         System.out.println("Choose either 1 or 2 or 3 or 4");
     }
   }
+  private void signUp() {
+    System.out.println("Enter your customer details please");
+    addCustomers();
+    System.out.println("Login into southern delights");
+    loginCustomer();
+  }
+  private void loginCustomer() {
+    System.out.println("Enter the Customer id");
+    int cusId = option.nextInt();
+    System.out.println("Enter the Password");
+    String pswd = option.next();
+    Customer c = CustomerFactory.validatingCustomer(cusId, pswd);
+    if (c.getcusId() == cusId && c.getpswd().equals(pswd)) {
+      System.out.println("Welcome to Southern Delights");
+    } else {
+      System.out.println("Enter valid user id and password");
+    }
+  }
+  private void signUpVendor() {
+    System.out.println("Enter your vendor details please");
+    addVendor();
+    System.out.println("Login into southern delights");
+    loginVendor();
+  }
+  private void loginVendor() {
+    System.out.println("Enter the vendor id");
+    int vdrId = option.nextInt();
+    System.out.println("Enter the Password");
+    String pswd = option.next();
+    Vendor c = VendorFactory.validatingVendor(vdrId, pswd);
+    if (c.getVdrId() == vdrId && c.getpswd().equals(pswd)) {
+      System.out.println("Welcome to Southern Delights");
+    } else {
+      System.out.println("Enter valid user id and password");
+    }
+  }
 
   /**
    * showFullMenu method display the menu item stored in database.
@@ -217,8 +268,8 @@ class CliMain {
     int phnNo = option.nextInt();
     String addRess = option.next();
     int crdNo = option.nextInt();
-    int pswd = option.nextInt();
-    if (pswd >= 8 && pswd <= 13) {
+    String pswd = option.next();
+    if (pswd.length() >= 8 && pswd.length() <= 13) {
       System.out.println("Password accepted");
     } else {
       System.out.println("Oops ! Password not accepted");
@@ -269,11 +320,13 @@ class CliMain {
 
 
   private void addVendor() {
-    System.out.println("spl" + "\t" + "status" + "\t" + "vdrId");
+    System.out.println("spl" + "\t" + "status" + "\t" + "vdrId" + "\t" + "phnNo" + " password");
     final String spl = option.next();
     final String status = option.next();
     final int vdrId = option.nextInt();
-    final int i = VendorFactory.insertingVendor(spl, status, vdrId);
+    final int phnNo = option.nextInt();
+    final String pswd = option.next();
+    final int i = VendorFactory.insertingVendor(spl, status, vdrId, phnNo, pswd);
     if (i > 0) {
       System.out.println("inserted successfully");
     } else {
@@ -351,10 +404,12 @@ class CliMain {
 
   private void showCustomer() {
     Customer[] me = CustomerFactory.showCustomer();
-    System.out.println("id" + "\t" + "wallet number" + "\t" + "phone number" + "\t" + "\t" + "Address" + "\t" + "\t" + "\t" + "card number");
+    System.out.println("id" + "\t" + "wallet number" + "\t" + "phone number" + "\t" + "\t"
+        + "Address" + "\t" + "\t" + "\t" + "card number" + "password");
 
     for (Customer m : me) {
-      System.out.println(m.getcusId() + "\t" + m.getwalNo() + "\t" + "\t" + m.getphnNo() + "\t" + "\t" + m.getaddRess() + "\t" + "\t" + m.getcrdNo());
+      System.out.println(m.getcusId() + "\t" + m.getwalNo() + "\t" + "\t" + m.getphnNo() + "\t" + "\t"
+          + m.getaddRess() + "\t" + "\t" + m.getcrdNo() + "\t" + m.getpswd());
     }
   }
 
