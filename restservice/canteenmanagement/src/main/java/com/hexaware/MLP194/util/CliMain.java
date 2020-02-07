@@ -1,17 +1,20 @@
 package com.hexaware.MLP194.util;
 
+//import java.sql.Date;
+//import java.text.SimpleDateFormat;
 import java.util.Scanner;
+
+import com.hexaware.MLP194.factory.CustomerFactory;
 import com.hexaware.MLP194.factory.MenuFactory;
-import com.hexaware.MLP194.factory.VendorFactory;
 import com.hexaware.MLP194.factory.OrdersFactory;
+import com.hexaware.MLP194.factory.VendorFactory;
 import com.hexaware.MLP194.factory.WalletFactory;
+//import com.hexaware.MLP194.factory.MenuFactory;
+import com.hexaware.MLP194.model.Customer;
 import com.hexaware.MLP194.model.Menu;
 import com.hexaware.MLP194.model.Orders;
 import com.hexaware.MLP194.model.Vendor;
 import com.hexaware.MLP194.model.Wallet;
-import com.hexaware.MLP194.factory.CustomerFactory;
-//import com.hexaware.MLP194.factory.MenuFactory;
-import com.hexaware.MLP194.model.Customer;
 //import com.hexaware.MLP194.persistence.CustomerDAO;
 //import com.hexaware.MLP194.model.Customer;
 //import com.hexaware.MLP194.model.Menu;
@@ -39,7 +42,9 @@ class CliMain {
     //detailsTableOrders();
     //detailsTableWallet();
     //mainMenu();
-    showFullMenu();
+    //showFullMenu();
+    //deleteOrders();
+    //placeOrderCustomer();
     table();
 
   }
@@ -116,7 +121,8 @@ class CliMain {
       System.out.println("4.display vendor details");
       System.out.println("5.update vendor details");
       System.out.println("6.delete vendor details");
-      System.out.println("7. Exit");
+      System.out.println("7.vendor orders");
+      System.out.println("8.Exit");
       final int tableOption = option.nextInt();
       switch (tableOption) {
         case 1:
@@ -137,6 +143,9 @@ class CliMain {
           deleteVendor();
           break;
         case 7:
+          vendorOrders();
+          break;
+        case 8:
           Runtime.getRuntime().halt(0);
         default:
           System.out.println("Choose either 1 or 2 or 3 or 4");
@@ -188,7 +197,8 @@ class CliMain {
     System.out.println("2.display order details");
     System.out.println("3.update order details");
     System.out.println("4.delete order details");
-    System.out.println("5. Exit");
+    System.out.println("5.placeOrderCustomer");
+    System.out.println("6.Exit");
     final int tableOption = option.nextInt();
     switch (tableOption) {
       case 1:
@@ -200,13 +210,30 @@ class CliMain {
       case 3:
         updateOrders();
         break;
-      case 4:
-        deleteOrders();
-        break;
       case 5:
+        deleteOrders();
+      case 6:
+        placeOrderCustomer();
+      case 7:
         Runtime.getRuntime().halt(0);
       default:
         System.out.println("Choose either 1 or 2 or 3 or 4");
+    }
+  }
+  private void placeOrderCustomer() {
+    System.out.println("1.place order");
+    System.out.println("2.calculate total");
+    final int tableOption1 = option.nextInt();
+    switch (tableOption1) {
+      case 1:
+        placeOrder();
+        break;
+      case 2:
+        calculateTotal();
+        break;
+      case 3:
+      default:
+        System.out.println("invalid");
     }
   }
   private void signUp() {
@@ -306,7 +333,7 @@ class CliMain {
     System.out.println("orderId" + "\t" + "status" + "\t" + "Custoemr id" + "\t" + "vendor id" + "\t" + "order history");
 
     for (Orders m : me) {
-      System.out.println(m.getOrdId() + "\t" + m.getStatus() + "\t" + "\t" + m.getCusId() + "\t" + m.getVdrId() + "\t" + m.getOrdHty());
+      System.out.println(m.getOrdId() + "\t" + m.getStatus() + "\t" + "\t" + m.getCusId() + "\t" + m.getVdrId());
     }
   }
   private void displayWallet() {
@@ -404,24 +431,25 @@ class CliMain {
 
   private void showCustomer() {
     Customer[] me = CustomerFactory.showCustomer();
-    System.out.println("id" + "\t" + "wallet number" + "\t" + "phone number" + "\t" + "\t"
-        + "Address" + "\t" + "\t" + "\t" + "card number" + "password");
+    System.out.println("id" + "\t" + "wallet number" + "\t" + "\t" + "phone number" + "\t" + "\t"
+        + "Address" + "\t" + "\t" + "\t" + "card number" + "\t" + "\t" + "password");
 
     for (Customer m : me) {
       System.out.println(m.getcusId() + "\t" + m.getwalNo() + "\t" + "\t" + m.getphnNo() + "\t" + "\t"
-          + m.getaddRess() + "\t" + "\t" + m.getcrdNo() + "\t" + m.getpswd());
+          + m.getaddRess() + "\t" + "\t" + "\t" + m.getcrdNo() +  "\t" + "\t" + m.getpswd());
     }
   }
 
   private void insertOrders() {
-    System.out.println("insert ordId" + "\t" + "status" + "\t" + "cusId" + "\t" + "vdrId" + "\t" + "ordHty");
+    System.out.println("insert ordId" + "\t" + "status" + "\t" + "cusId" + "\t" + "vdrId" + "\t" + "total" + "\t" + "token" + "\t" + "ordDate");
     int ordId = option.nextInt();
     String status = option.next();
     int cusId = option.nextInt();
     int vdrId = option.nextInt();
-    String ordHty = option.next();
-    int itmId = option.nextInt();
-    int i = OrdersFactory.insertingOrders(ordId, status, cusId, vdrId, ordHty, itmId);
+    String ordDate = option.next();
+    int token = option.nextInt();
+    int total = option.nextInt();
+    int i = OrdersFactory.insertingOrders(ordId, status, cusId, vdrId, total, ordDate, token);
     if (i > 0) {
       System.out.println("inserted successfully");
     } else {
@@ -441,12 +469,42 @@ class CliMain {
   private void updateOrders() {
     System.out.println("update ordId" + "\t" + "ordHty");
     int ordId = option.nextInt();
-    String ordHty = option.next();
-    int i = OrdersFactory.updatingOrders(ordId, ordHty);
+    String status = option.next();
+    int i = OrdersFactory.updatingOrders(status, ordId);
     if (i >= 0) {
       System.out.println("updated successfully");
     } else {
       System.out.println("Not updated");
+    }
+  }
+  private void placeOrder() {
+    System.out.println("placed ordId" + "\t" + "cusId");
+    int ordId = option.nextInt();
+    int cusId = option.nextInt();
+    int i = OrdersFactory.placingOrder(ordId, cusId);
+    if (i > 0) {
+      System.out.println("placed successfully");
+    } else {
+      System.out.println("Not placed");
+    }
+  }
+  private void calculateTotal() {
+    System.out.println("calculate total" + "\t" + "total");
+    int price = option.nextInt();
+    int qty = option.nextInt();
+    int i = OrdersFactory.calculatingTotal(qty, price);
+    int j = qty * price;
+    System.out.println(j);
+  }
+  private void vendorOrders() {
+    System.out.println("vendor Orders" + "\t" + "ordId" + "\t" + "status");
+    int ordId = option.nextInt();
+    //String status = option.next();
+    Orders i = OrdersFactory.orderingStatus(ordId);
+    if (i.getStatus().equals("ORDERED")) {
+      System.out.println("order accepted");
+    } else {
+      System.out.println("order denied");
     }
   }
   /**

@@ -1,4 +1,7 @@
 package com.hexaware.MLP194.model;
+
+import java.sql.Date;
+
 /**
  * Order class used to display wallet information.
  * @author hexware
@@ -8,7 +11,10 @@ public class Orders {
   private String status;
   private int cusId;
   private int vdrId;
-  private String ordHty;
+  private int qty;
+  private int total;
+  private int token;
+  private Date ordDate;
 
   @Override
     public final int hashCode() {
@@ -19,6 +25,9 @@ public class Orders {
     result = prime * result + ordId;
     //result = prime * result + ((status == null) ? 0 : status.hashCode());
     result = prime * result + vdrId;
+    result = prime * result + total;
+    result = prime * result + token;
+    result = prime * result + qty;
     return result;
   }
 
@@ -37,11 +46,13 @@ public class Orders {
     if (cusId != other.cusId) {
       return false;
     }
-    if (ordHty == null) {
-      if (other.ordHty != null) {
-        return false;
-      }
-    } else if (!ordHty.equals(other.ordHty)) {
+    if (token != other.token) {
+      return false;
+    }
+    if (total != other.total) {
+      return false;
+    }
+    if (qty != other.qty) {
       return false;
     }
     if (ordId != other.ordId) {
@@ -71,6 +82,19 @@ public class Orders {
 
   public  final void setOrdId(final int argordId) {
     this.ordId = argordId;
+  }
+  /**
+ * @return to get the order id.
+ */
+  public int gettoken() {
+    return token;
+  }
+/**
+* @param argtoken to set the order id
+*/
+
+  public  final void settoken(final int argtoken) {
+    this.token = argtoken;
   }
 /**
  * @return to get the order status
@@ -109,17 +133,29 @@ public class Orders {
   public final void setVdrId(final int argvdrId) {
     this.vdrId = argvdrId;
   }
+  /**
+ * @return to get the total
+ */
+  public int gettotal() {
+    return total;
+  }
+/**
+* @param argtotal to set the total.
+*/
+  public final void settotal(final int argtotal) {
+    this.total = argtotal;
+  }
 /**
  * @return to get the order history.
  */
-  public String getOrdHty() {
-    return ordHty;
+  public int getqty() {
+    return qty;
   }
 /**
- * @param argordHty to set the order history
+ * @param argqty to set the order quantity
  */
-  public final void setOrdHty(final String argordHty) {
-    this.ordHty = argordHty;
+  public final void setqty(final int argqty) {
+    this.qty = argqty;
   }
 /**
  * Default Constructor .
@@ -130,15 +166,21 @@ public class Orders {
  * @param argordId to initialise order id
  * @param argstatus to  initialise order status
  * @param argcusId to initialise customer id
- * @param argvdrId to  initialise vendor id
- * @param argordHty to initialise order history
+ * @param argvdrId to  initialise vendor id.
+ * @param argtotal to initialise total.
+ * @param argtoken to initialise token.
+ * @param argordDate to initialise date.
  */
 
-  public Orders(final int argordId, final String argstatus, final int argcusId, final int argvdrId, final String argordHty) {
+  public Orders(final int argordId, final String argstatus, final int argcusId,
+      final int argvdrId, final int argtotal, final int argtoken, final Date argordDate) {
     this.ordId = argordId;
     this.status = argstatus;
     this.cusId = argcusId;
     this.vdrId = argvdrId;
-    this.ordHty = argordHty;
+    this.total = argtotal;
+    this.token = argtoken;
+    this.ordDate = argordDate;
   }
+
 }

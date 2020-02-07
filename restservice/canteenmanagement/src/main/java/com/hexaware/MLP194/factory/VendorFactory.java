@@ -2,6 +2,8 @@ package com.hexaware.MLP194.factory;
 import com.hexaware.MLP194.persistence.VendorDAO;
 import com.hexaware.MLP194.persistence.DbConnection;
 import java.util.List;
+
+import com.hexaware.MLP194.model.Orders;
 import com.hexaware.MLP194.model.Vendor;
 /**
  * MenuFactory class used to fetch menu data from database.
@@ -50,35 +52,39 @@ public class VendorFactory {
    * @return to return details of vendor.
    */
   public static int updatingVendor(final String spl, final int vdrId) {
-    int i = dao().updateVendor(spl, vdrId);
+    final int i = dao().updateVendor(spl, vdrId);
     return i;
   }
+
   /**
    * @param vdrId to get vendor id.
    * @return to return details of vendor.
    */
   public static int deletingVendor(final int vdrId) {
-    int i = dao().deleteVendor(vdrId);
+    final int i = dao().deleteVendor(vdrId);
     return i;
   }
+
   /**
    * @return to return details of vendor.
    */
   public static Vendor[] showVendor() {
-    List<Vendor> m = dao().show();
+    final List<Vendor> m = dao().show();
     return m.toArray(new Vendor[m.size()]);
   }
 
-   /**
+  /**
    * @param vdrId to validate customer id.
-   * @param pswd to valiidate passwword.
+   * @param pswd  to valiidate passwword.
    * @return to return validation result.
    */
 
   public static Vendor validatingVendor(final int vdrId, final String pswd) {
-    Vendor vendors = dao().validatingVendors(vdrId, pswd);
+    final Vendor vendors = dao().validatingVendors(vdrId, pswd);
     return vendors;
   }
+
+ 
 }
 
 

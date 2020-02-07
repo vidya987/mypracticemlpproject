@@ -5,6 +5,8 @@ import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.customizers.Mapper;
 import java.util.List;
+
+import com.hexaware.MLP194.model.Orders;
 import com.hexaware.MLP194.model.Vendor;
 /**
  * VendorDAO class used to fetch data from data base.
@@ -54,4 +56,6 @@ public interface VendorDAO {
   @SqlQuery("select * from Customer where VDR_ID = :cusId and PSWD = :pswd")
   @Mapper(VendorMapper.class)
   Vendor validatingVendors(@Bind("vdrId") int vdrId, @Bind("pswd") String pswd);
+
+  
 }
