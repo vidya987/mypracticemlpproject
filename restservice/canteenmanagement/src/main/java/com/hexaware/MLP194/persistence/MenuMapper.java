@@ -1,10 +1,7 @@
 package com.hexaware.MLP194.persistence;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import com.hexaware.MLP194.model.Menu;
-
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 import org.skife.jdbi.v2.StatementContext;
 /**

@@ -36,8 +36,8 @@ public class MenuTest {
   @Test
   public final void testMenu() {
 
-    Menu m100 = new Menu(100, null);
-    Menu m101 = new Menu(101, null);
+    Menu m100 = new Menu(100);
+    Menu m101 = new Menu(101);
     assertNotEquals(m100, null);
     assertNotEquals(m101, null);
     assertEquals(m100.getFoodId(),

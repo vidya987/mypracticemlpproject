@@ -23,6 +23,7 @@ public class OrdersMapper implements ResultSetMapper<Orders> {
       /**
        * @return Orders
        */
-    return new Orders(rs.getInt("ODR_ID"), rs.getString("STATUS"), rs.getInt("CUS_ID"), rs.getInt("VDR_ID"), rs.getString("ODR_HTY"));
+    return new Orders(rs.getInt("ODR_ID"), rs.getString("STATUS"), rs.getInt("CUS_ID"),
+    rs.getInt("VDR_ID"), rs.getInt("TOTAL"),   rs.getInt("TKN_NO"),  rs.getDate("ORD_DATE"));
   }
 }

@@ -38,11 +38,12 @@ public class CustomerFactory {
      * @param phnNo to insert customer phone number.
      * @param addRess to insert customer address.
      * @param crdNo to insert customer card number.
+     * @param pswd to insert the password.
      * @return to return inserted value.
      */
 
-  public static int insertingCustomer(final int cusId, final int walNo, final int phnNo, final String addRess, final int crdNo) {
-    int i = dao().insert(cusId, walNo, phnNo, addRess, crdNo);
+  public static int insertingCustomer(final int cusId, final int walNo, final int phnNo, final String addRess, final int crdNo, final String pswd) {
+    int i = dao().insert(cusId, walNo, phnNo, addRess, crdNo, pswd);
     return i;
   }
   /**
@@ -63,6 +64,16 @@ public class CustomerFactory {
   public static int deletingCustomer(final int cusId) {
     int checkin = dao().deleteByCustomerId(cusId);
     return checkin;
+  }
+  /**
+   * @param cusId to validate customer id.
+   * @param pswd to valiidate passwword.
+   * @return to return validation result.
+   */
+
+  public static Customer validatingCustomer(final int cusId, final String pswd) {
+    Customer customer = dao().validating(cusId, pswd);
+    return customer;
   }
 }
 

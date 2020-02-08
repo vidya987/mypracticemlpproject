@@ -24,12 +24,13 @@ public interface CustomerDAO {
      * @param phnNo to insert into Phone Number.
      * @param addRess to insert into Address.
      * @param crdNo to insert into Card Number.
+     * @param pswd to get password.
      * @return will return values.
      */
 
-  @SqlUpdate("INSERT INTO Customer(CUS_ID, WAL_NO, PHN_NO, ADDRESS, CRD_NO)" + " VALUES (:cusId, :walNo, :phnNo, :addRess, :crdNo)")
+  @SqlUpdate("INSERT INTO Customer(CUS_ID, WAL_NO, PHN_NO, ADDRESS, CRD_NO, PSWD)" + " VALUES (:cusId, :walNo, :phnNo, :addRess, :crdNo, :pswd)")
     int insert(@Bind("cusId") int cusId, @Bind("walNo") int walNo, @Bind("phnNo") int phnNo,
-      @Bind("addRess") String addRess, @Bind("crdNo") int crdNo);
+      @Bind("addRess") String addRess, @Bind("crdNo") int crdNo, @Bind("pswd") String pswd);
     /**
      * @param cusId to delete Customer.
      * @return to return deleted value.
@@ -44,4 +45,13 @@ public interface CustomerDAO {
      */
   @SqlUpdate("update Customer set PHN_NO=:phnNo,ADDRESS =:addRess where CUS_ID =:cusId")
     int update(@Bind("phnNo") int phnNo, @Bind("addRess") String addRess, @Bind("cusId") int cusId);
+    /**
+     * @param cusId to check customer id.
+     * @param pswd to check password.
+     * @return to return validation result.
+     */
+
+  @SqlQuery("select * from Customer where CUS_ID = :cusId and PSWD = :pswd")
+  @Mapper(CustomerMapper.class)
+  Customer validating(@Bind("cusId") int cusId, @Bind("pswd") String pswd);
 }

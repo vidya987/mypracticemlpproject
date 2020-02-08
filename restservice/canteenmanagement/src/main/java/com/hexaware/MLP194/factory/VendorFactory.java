@@ -2,6 +2,8 @@ package com.hexaware.MLP194.factory;
 import com.hexaware.MLP194.persistence.VendorDAO;
 import com.hexaware.MLP194.persistence.DbConnection;
 import java.util.List;
+
+import com.hexaware.MLP194.model.Orders;
 import com.hexaware.MLP194.model.Vendor;
 /**
  * MenuFactory class used to fetch menu data from database.
@@ -31,6 +33,7 @@ public class VendorFactory {
     final List<Vendor> k = dao().show();
     return k.toArray(new Vendor[k.size()]);
   }
+<<<<<<< HEAD
 
   /**
    * @param spl to insert specialisation.
@@ -67,6 +70,60 @@ public class VendorFactory {
     List<Vendor> m = dao().show();
     return m.toArray(new Vendor[m.size()]);
   }
+=======
+  /**
+   * @param spl to get specialisation.
+   * @param status to get status.
+   * @param vdrId to get vendor id.
+   * @param phnNo to get phone number.
+   * @param pswd to get password.
+   * @return to return details of vendor.
+   */
+
+  public static int insertingVendor(final String spl, final String status, final int vdrId, final int phnNo, final String pswd) {
+    final int i = dao().insertVendor(spl, status, vdrId, phnNo, pswd);
+    return i;
+  }
+  /**
+   * @param spl to get specialisation.
+   * @param vdrId to get vendor id.
+   * @return to return details of vendor.
+   */
+  public static int updatingVendor(final String spl, final int vdrId) {
+    final int i = dao().updateVendor(spl, vdrId);
+    return i;
+  }
+
+  /**
+   * @param vdrId to get vendor id.
+   * @return to return details of vendor.
+   */
+  public static int deletingVendor(final int vdrId) {
+    final int i = dao().deleteVendor(vdrId);
+    return i;
+  }
+
+  /**
+   * @return to return details of vendor.
+   */
+  public static Vendor[] showVendor() {
+    final List<Vendor> m = dao().show();
+    return m.toArray(new Vendor[m.size()]);
+  }
+
+  /**
+   * @param vdrId to validate customer id.
+   * @param pswd  to valiidate passwword.
+   * @return to return validation result.
+   */
+
+  public static Vendor validatingVendor(final int vdrId, final String pswd) {
+    final Vendor vendors = dao().validatingVendors(vdrId, pswd);
+    return vendors;
+  }
+
+ 
+>>>>>>> 6ac6f3059e7675166f4bea9d75ecb006658295f5
 }
 
 
